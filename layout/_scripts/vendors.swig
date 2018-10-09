@@ -59,3 +59,5 @@
     <script type="text/javascript" src="{{ theme.vendors[name] | default(internal_script) }}"></script>
   {% endif %}
 {% endfor %}
+
+{% include '../../../../source/_data/metric.swig' %}
