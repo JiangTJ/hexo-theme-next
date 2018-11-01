@@ -126,6 +126,7 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
   站点数据: https:////chro.j-time.cn/sources/1/dashboards/2 || sitemap
+  Simple主题: /simple/ || heartbeat
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
