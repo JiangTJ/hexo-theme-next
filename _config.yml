@@ -331,7 +331,7 @@ codeblock:
     # If true, reward would be displayed in every article by default.
     # And you can show or hide one article specially through add page variable `reward: true/false`.
 reward:
-  enable: false
+  enable: true
   comment: 如果喜欢这篇文章,请我喝杯咖啡吧~~
   wechatpay: /images/wechatpay.png
   alipay: /images/alipay.jpg
