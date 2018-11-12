@@ -125,15 +125,23 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  about: /me/ || user
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
-  schedule: /schedule/ || calendar
+  #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  站点数据: https:////chro.j-time.cn/sources/1/dashboards/2 || sitemap
+  站点数据: https://chro.j-time.cn/sources/1/dashboards/2 || sitemap
   #Simple主题: /simple/ || heartbeat
+  更多:
+    default: /more/ || info-circle
+    主页: https://jiangtj.gitlab.io/me || user
+    数据: https://chro.j-time.cn/sources/1/dashboards/2 || sitemap
+    schedule: /schedule/ || calendar
+    公告: /update/ || cogs
+    工具: /tools/ || briefcase
+    VPN: /vpn/ || plane
+    
 
 # Enable/Disable menu icons / item badges.
 menu_settings:

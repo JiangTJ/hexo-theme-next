@@ -21,7 +21,11 @@
               {% if itemName == 'default' %}
                 {% set parentValue = subvalue.split('||')[0] | trim %}
               {% else %}
-                {% set respath = parentValue + subvalue %}
+                {% if subvalue.indexOf("http") == 0 %}
+                  {% set respath = subvalue %}
+                {% else %}
+                  {% set respath = parentValue + subvalue %}
+                {% endif %}
                 {{ menu_item.render(subname, respath) }}
               {% endif %}
             {% else %}
