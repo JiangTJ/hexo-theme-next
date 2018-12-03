@@ -193,7 +193,7 @@ site_state: true
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
 social:
-  Go More Mine Site: https://jiangtj.gitlab.io/cover || heart
+  Find More Mine Site: https://jiangtj.gitlab.io/cover || heart
 
 social_icons:
   enable: true
