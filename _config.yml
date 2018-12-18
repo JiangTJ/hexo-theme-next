@@ -193,8 +193,6 @@ site_state: true
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-social:
-  Find More Mine Site: https://jiangtj.gitlab.io/cover || heart
 
 social_icons:
   enable: true
