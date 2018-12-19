@@ -143,14 +143,14 @@ menu:
   archives: /archives/ || archive
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  更多:
-    default: /more/ || info-circle
-    我: https://jiangtj.gitlab.io/cover || heart
-    数据: https://chro.j-time.cn/sources/1/dashboards/2 || sitemap
-    schedule: /schedule/ || calendar
-    公告: /update/ || cogs
-    工具: /tools/ || briefcase
-    VPN: /vpn/ || plane
+  #更多:
+    #default: /more/ || info-circle
+    #我: https://jiangtj.gitlab.io/cover || heart
+    #数据: https://chro.j-time.cn/sources/1/dashboards/2 || sitemap
+    #schedule: /schedule/ || calendar
+    #公告: /update/ || cogs
+    #工具: /tools/ || briefcase
+    #VPN: /vpn/ || plane
     
 
 # Enable/Disable menu icons / item badges.
