@@ -11,5 +11,6 @@ mv ../_config.yml themes/next/
 mv ../package.json themes/next/
 npm install
 hexo config theme next
+hexo config url https://j-blog-theme-test.netlify.com
 hexo g
 mv public ../
