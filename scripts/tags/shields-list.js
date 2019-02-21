@@ -10,23 +10,10 @@ const fs = require('fs');
 const util = require('hexo-util');
 const yaml = require('js-yaml');
 
-function renderShields(args) {
-  let filePath = args[0];
+function renderShields(data) {
+
   let htmlTag = util.htmlTag;
-
-  if (!filePath) {
-    hexo.log.warn('FilePath can NOT be empty');
-  }
-
-  if (!filePath.indexOf('/') == 0) {
-    filePath = 'source/_data/' + filePath
-  }
-
-  if (!filePath.lastIndexOf('.yml') == 0) {
-    filePath = filePath + '.yml'
-  }
-
-  let config = yaml.safeLoad(fs.readFileSync(filePath));
+  let config = yaml.safeLoad(data);
 
   let items = Object.keys(config).map((key) => {
     let value = config[key];
@@ -50,5 +37,21 @@ function renderShields(args) {
   return items.join('');
 }
 
-hexo.extend.tag.register('shields', renderShields, { ends: false });
-hexo.extend.tag.register('shields-list', renderShields, { ends: false });
+hexo.extend.tag.register('shields_data', (args,content) => {
+  return renderShields(content);
+}, { ends: true });
+
+hexo.extend.tag.register('shields', (args) => {
+  let filePath = args[0];
+  if (!filePath) {
+    hexo.log.warn('FilePath can NOT be empty');
+  }
+  if (!filePath.indexOf('/') == 0) {
+    filePath = 'source/_data/' + filePath;
+  }
+  filePath = filePath + '.yml';
+  if (filePath.indexOf('.') < 0) {
+  }
+  let data = fs.readFileSync(filePath);
+  return renderShields(data);
+}, { ends: false });
