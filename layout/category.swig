@@ -6,6 +6,11 @@
 
 {% block content %}
 
+  {% if theme.scheme === 'Neet' %}
+    {% include '_neet/page-categories.swig' %}
+    <div class="posts-categories-right">
+  {% endif %}
+
   {######################}
   {### CATEGORY BLOCK ###}
   {######################}
@@ -30,6 +35,10 @@
   {##########################}
 
   {% include '_partials/pagination.swig' %}
+
+  {% if theme.scheme === 'Neet' %}
+    </div>
+  {% endif %}
 
 {% endblock %}
 

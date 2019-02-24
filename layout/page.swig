@@ -20,7 +20,8 @@
 {% block content %}
 
   {% if theme.scheme === 'Neet' && page.type === 'categories-tags' %}
-    {% include '_neet/page.swig' %}
+    {% include '_neet/page-categories.swig' %}
+    {% include '_neet/page-categories-tags.swig' %}
   {% else %}
 
   <div id="posts" class="posts-expand">
