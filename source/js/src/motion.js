@@ -254,7 +254,7 @@ $(document).ready(function() {
         getMistLineSettings($logoLineBottom, '-100%')
       );
 
-      NexT.utils.isMuse() && hasElement($image) && pushImageToSequence();
+      (NexT.utils.isMuse() || NexT.utils.isNeet()) && hasElement($image) && pushImageToSequence();
 
       hasElement($title) && sequence.push({
         e: $title,

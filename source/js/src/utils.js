@@ -243,6 +243,10 @@ NexT.utils = NexT.$u = {
     return CONFIG.scheme === 'Muse';
   },
 
+  isNeet: function() {
+    return CONFIG.scheme === 'Neet';
+  },
+
   isMist: function() {
     return CONFIG.scheme === 'Mist';
   },
