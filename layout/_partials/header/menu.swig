@@ -40,7 +40,7 @@
     </ul>
   {% endif %}
 
-  {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' %}
+  {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' || theme.scheme === 'Neet' %}
     {% include 'sub-menu.swig' %}
   {% endif %}
 

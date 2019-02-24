@@ -19,6 +19,10 @@
 
 {% block content %}
 
+  {% if theme.scheme === 'Neet' && page.type === 'categories-tags' %}
+    {% include '_neet/page.swig' %}
+  {% else %}
+
   <div id="posts" class="posts-expand">
     {##################}
     {### PAGE BLOCK ###}
@@ -75,6 +79,8 @@
     {### END PAGE BLOCK ###}
     {######################}
   </div>
+
+  {% endif %}
 
 {% endblock %}
 
