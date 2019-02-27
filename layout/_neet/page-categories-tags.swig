@@ -7,9 +7,9 @@
   标签
   {% include '../_partials/post-edit.swig' %}
 </{% if theme.seo %}h2{% else %}h1{% endif %}>
-<div class="post-meta">
+<!-- <div class="post-meta">
   {% include '../_partials/page/breadcrumb.swig' %}
-</div>
+</div> -->
 </header>
 
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">

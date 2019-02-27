@@ -6,6 +6,13 @@
 
 {% block content %}
 
+  {% if theme.scheme === 'Neet' %}
+    <div id="posts" class="posts-expand posts-categories-left page-sidebar-moblie-hidden">
+      {% include '_neet/page-tags.swig' %}
+    </div>
+    <div class="posts-categories-right">
+  {% endif %}
+
   {#################}
   {### TAG BLOCK ###}
   {#################}
@@ -28,6 +35,10 @@
   {#####################}
   {### END TAG BLOCK ###}
   {#####################}
+
+  {% if theme.scheme === 'Neet' %}
+    </div>
+  {% endif %}
 
   {% include '_partials/pagination.swig' %}
 {% endblock %}

@@ -7,7 +7,9 @@
 {% block content %}
 
   {% if theme.scheme === 'Neet' %}
-    {% include '_neet/page-categories.swig' %}
+    <div id="posts" class="posts-expand posts-categories-left page-sidebar-moblie-hidden">
+      {% include '_neet/page-categories.swig' %}
+    </div>
     <div class="posts-categories-right">
   {% endif %}
 

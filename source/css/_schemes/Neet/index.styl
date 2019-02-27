@@ -292,18 +292,43 @@
 .category > .posts-collapse > .collection-title {
   margin: 0;
 }
-+tablet() {
-  .posts-categories-right{
-    margin-left: 260px;
-  }
-}
 +mobile() {
   .posts-categories-left{
     float: initial;
     width: initial;
+    margin-bottom: 10px;
   }
   .posts-categories-right{
     margin-left: initial;
-    margin-top: 10px;
+  }
+  .page-sidebar-moblie-hidden{
+    display: none;
+  }
+}
++tablet() {
+  .posts-categories-left{
+    float: left;
+    width: 190px;
+  }
+  .posts-categories-right{
+    margin-left: 200px;
+  }
+}
++desktop() {
+  .posts-categories-left{
+    float: left;
+    width: 210px;
+  }
+  .posts-categories-right{
+    margin-left: 220px;
+  }
+}
++desktop-large() {
+  .posts-categories-left{
+    float: left;
+    width: 230px;
+  }
+  .posts-categories-right{
+    margin-left: 240px;
   }
 }
