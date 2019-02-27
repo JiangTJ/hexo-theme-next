@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * bilibili.js | https://theme-next.org/docs/tag-plugins/button/
+ * {% bilibili aid cid %}
  */
 function renderBilibili(args) {
   var aid   = args[0];
