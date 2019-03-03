@@ -887,6 +887,10 @@ canvas_ribbon:
   alpha: 0.6
   zIndex: -1
 
+netlify_lm:
+  enable: false
+  max_width:
+
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
 # For example
