@@ -22,7 +22,7 @@
       <div class="collection-title">
         <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
         #}{{ page.tag }}{#
-        #}<small>{{  __('title.tag')  }}</small>
+        #}<small>{{ __('title.tag') }}</small>
         </{% if theme.seo %}h2{% else %}h1{% endif %}>
       </div>
 
@@ -41,6 +41,7 @@
   {% endif %}
 
   {% include '_partials/pagination.swig' %}
+
 {% endblock %}
 
 {% block sidebar %}
