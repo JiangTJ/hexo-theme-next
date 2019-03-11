@@ -983,7 +983,7 @@ vendors:
   # Example:
   # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
   # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
-  lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1.9.7/jquery.lazyload.min.js
+  lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
   # Internal version: 1.2.1
   # See: http://velocityjs.org
