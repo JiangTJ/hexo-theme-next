@@ -10,7 +10,7 @@ function fullImage(args) {
   args = args.join(' ').split(',');
   var mixed = args[0].split('@');
   var img   = mixed[0];
-  var src   = mixed[1] === 'lazy' ? '/images/loading.gif" data-original="' + img : img;
+  var src   = mixed[1] === 'lazy' ? '/images/loading.gif" data-src="' + img : img;
   var alt   = args[1] || '';
   var title = args[2] || '';
   var width = args[3] || '';

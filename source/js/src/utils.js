@@ -15,7 +15,7 @@ NexT.utils = NexT.$u = {
         var $imageWrapLink = $image.parent('a');
 
         if ($imageWrapLink.length < 1) {
-          var imageLink = $image.attr('data-original') ? this.getAttribute('data-original') : this.getAttribute('src');
+          var imageLink = $image.attr('data-srcset') ? this.getAttribute('data-srcset').split('?')[0] : this.getAttribute('src');
           $imageWrapLink = $image.wrap('<a data-fancybox="group" href="' + imageLink + '"></a>').parent('a');
           $imageWrapLink.addClass('fancybox fancybox.image');
           $imageWrapLink.attr('rel', 'group');
@@ -40,11 +40,8 @@ NexT.utils = NexT.$u = {
   },
 
   lazyLoadPostsImages: function() {
-    $('#posts').find('img').lazyload({
-      //placeholder: '/images/loading.gif',
-      effect   : 'fadeIn',
-      threshold: 0
-    });
+    var observer = lozad();
+    observer.observe();
   },
 
   /**
