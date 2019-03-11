@@ -40,7 +40,8 @@ NexT.utils = NexT.$u = {
   },
 
   lazyLoadPostsImages: function() {
-    lazyload();
+    var observer = lozad();
+    observer.observe();
   },
 
   /**

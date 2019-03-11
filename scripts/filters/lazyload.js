@@ -2,45 +2,42 @@
 
 'use strict';
 
-/**
- * Theme setting
- * netlify_lm:
- *   enable: true/false
- *   max_width:
- */
-// hexo.extend.filter.register('after_post_render', function (data) {
-//   var theme = hexo.theme.config;
-
-//   if (!theme.lazyload) return;
-
-//   var cheerio;
-
-//   if (!cheerio) cheerio = require('cheerio');
-
-//   var $ = cheerio.load(data.content, { decodeEntities: false });
-
-//   $('img').each(function () {
-
-//     let $image = $(this);
-//     let imageLink = $image.attr('src');
-//     $image.attr('data-src', imageLink);
-//     //$image.removeAttr('src');
-//     $image.attr('src', '/images/loading-l.gif');
-//     $image.attr('class',  $image.attr('class')||'lazyload');
-
-//   });
-
-//   data.content = $.html();
-// }, 1);
-
 function doLazyload ($) { 
+
+  /**
+   *     ~ 413 380
+   * 413 ~ 567 528
+   * 567 ~ 1200 640
+   * 1201 ~ 1600 820
+   * 1601 ~ + 1120
+   */
+  let responsiveWidth = [
+    [413,380],
+    [567,528],
+    [1200,640],
+    [1600,820],
+    [1601,1120]
+  ]
+
   $('img').each(function () {
     let $image = $(this);
     let imageLink = $image.attr('src');
-    $image.attr('data-src', imageLink);
+    //$image.attr('data-src', imageLink);
     //$image.removeAttr('src');
     $image.attr('src', '/images/loading-l.gif');
-    $image.attr('class',  $image.attr('class')||'lazyload');
+    $image.attr('class',  $image.attr('class')||'lozad');
+
+    let srcsetList = [];
+    let width = $image.attr('width');
+    imageLink = imageLink.split('?')[0];
+    responsiveWidth.forEach(item => {
+      if (width && width<item[1]) {
+        srcsetList.push(`${imageLink}?nf_resize=fit&w=${width} ${item[0]}w`)
+        return;
+      }
+      srcsetList.push(`${imageLink}?nf_resize=fit&w=${item[1]} ${item[0]}w`)
+    })
+    $image.attr('data-srcset', srcsetList.join(','));
   });
 }
 
