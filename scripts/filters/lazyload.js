@@ -24,12 +24,12 @@ function doLazyload ($) {
     let imageLink = $image.attr('src');
     //$image.attr('data-src', imageLink);
     //$image.removeAttr('src');
-    $image.attr('src', '/images/loading-l.gif');
+    imageLink = imageLink.split('?')[0];
+    $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
     $image.attr('class',  $image.attr('class')||'lozad');
 
     let srcsetList = [];
     let width = $image.attr('width');
-    imageLink = imageLink.split('?')[0];
     responsiveWidth.forEach(item => {
       if (width && width<item[1]) {
         srcsetList.push(`${imageLink}?nf_resize=fit&w=${width} ${item[0]}w`)
