@@ -28,8 +28,12 @@ function doLazyload ($) {
     $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
     $image.attr('class',  $image.attr('class')||'lozad');
 
-    let srcsetList = [];
     let width = $image.attr('width');
+    if (width) {
+      $image.css("width",width + "px"); 
+    }
+
+    let srcsetList = [];
     responsiveWidth.forEach(item => {
       if (width && width<item[1]) {
         srcsetList.push(`${imageLink}?nf_resize=fit&w=${width} ${item[0]}w`)
