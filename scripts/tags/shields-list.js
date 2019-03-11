@@ -23,6 +23,7 @@ function renderShields(data) {
     }
     value.src = value.src || 'https://img.shields.io/badge/'+ encodeURI(value.name||key) + '-' + encodeURI(value.des) + '-' + encodeURI(value.color) + '.svg'
     let imgArgs = {
+      class: 'un-lozad',
       style: 'margin:0;float:left;',
       src: value.src,
       alt: value.alt||key,
