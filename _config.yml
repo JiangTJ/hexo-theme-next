@@ -889,7 +889,7 @@ fastclick: false
 
 # Added switch option for separated repo in 6.0.0.
 # Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: false
+lazyload: true
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
@@ -970,9 +970,8 @@ vendors:
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
   # Example:
-  # lazyload: //cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
-  # lazyload: //cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js
-  lazyload:
+  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
   # Internal version: 1.2.1
   # See: http://velocityjs.org
