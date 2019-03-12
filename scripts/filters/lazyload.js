@@ -26,7 +26,7 @@ function doLazyload ($) {
     //$image.removeAttr('src');
     imageLink = imageLink.split('?')[0];
     $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
-    $image.attr('class',  $image.attr('class')||'lozad');
+    $image.attr('class',  $image.attr('class')||'lazyload');
 
     let width = $image.attr('width');
     if (width) {
