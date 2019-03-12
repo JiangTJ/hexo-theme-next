@@ -42,6 +42,7 @@ function doLazyload ($) {
       srcsetList.push(`${imageLink}?nf_resize=fit&w=${item[1]} ${item[0]}w`)
     })
     $image.attr('data-srcset', srcsetList.join(','));
+    $image.attr('data-sizes','auto');
   });
 }
 

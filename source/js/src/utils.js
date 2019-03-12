@@ -42,10 +42,10 @@ NexT.utils = NexT.$u = {
   lazyLoadPostsImages: function() {
     //var observer = lozad();
     //observer.observe();
-    $(document).on('lazybeforesizes', function(e){
-      //use width of parent node instead of the image width itself
-      e.detail.width = $(e.target).closest(':not(picture)').innerWidth() || e.detail.width;
-    });
+    // $(document).on('lazybeforesizes', function(e){
+    //   //use width of parent node instead of the image width itself
+    //   e.detail.width = $(e.target).closest(':not(picture)').innerWidth() || e.detail.width;
+    // });
   },
 
   /**
