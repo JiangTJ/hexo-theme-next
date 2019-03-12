@@ -26,7 +26,7 @@ function doLazyload ($) {
     //$image.removeAttr('src');
     imageLink = imageLink.split('?')[0];
     $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
-    $image.attr('class',  $image.attr('class')||'lazyload');
+    $image.attr('class',  $image.attr('class')||'lozad');
 
     let width = $image.attr('width');
     if (width) {
@@ -42,7 +42,6 @@ function doLazyload ($) {
       srcsetList.push(`${imageLink}?nf_resize=fit&w=${item[1]} ${item[0]}w`)
     })
     $image.attr('data-srcset', srcsetList.join(','));
-    $image.attr('data-sizes','auto');
   });
 }
 
