@@ -23,12 +23,9 @@ NexT.utils = NexT.$u = {
           else if ($image.is('.group-picture img')) {
             $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
           }
-          else {
-            $imageWrapLink.attr('data-fancybox', 'default').attr('rel', 'default');
-          }
         }
 
-        if (imageTitle) {
+        if (imageTitle && $imageWrapLink.is('.fancybox')) {
           $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
           // Make sure img title tag will show correctly in fancybox
           $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
