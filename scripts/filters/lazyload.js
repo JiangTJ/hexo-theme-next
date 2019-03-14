@@ -21,12 +21,16 @@ function doLazyload ($) {
 
   $('img').each(function () {
     let $image = $(this);
+    $image.attr('class',  $image.attr('class')||'lozad');
+    if (!$image.is('.lozad')) {
+      return;
+    }
+
     let imageLink = $image.attr('src');
     //$image.attr('data-src', imageLink);
     //$image.removeAttr('src');
     imageLink = imageLink.split('?')[0];
     $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
-    $image.attr('class',  $image.attr('class')||'lozad');
 
     let width = $image.attr('width');
     if (width) {
