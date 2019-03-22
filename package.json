@@ -35,9 +35,5 @@
     "js-yaml": "^3.8.1",
     "jshint-stylish": "^2.1.0",
     "stylint": "^1.5.9"
-  },
-  "dependencies": {
-    "imagemin": "^6.1.0",
-    "imagemin-webp": "^5.0.0"
   }
 }
