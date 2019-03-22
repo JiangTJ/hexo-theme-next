@@ -5,16 +5,19 @@
 function doLazyload ($) { 
 
   /**
-   *     ~ 413 380
-   * 413 ~ 567 528
-   * 567 ~ 1200 640
-   * 1201 ~ 1600 820
-   * 1601 ~ + 1120
+   * mist
+   * 413 380
+   * 567 528
+   * 1200 640
+   * 1600 820
+   * 9999 1120
+   * 
+   *      ~ 1000 640
+   * 1001 ~ 1600 820
+   * 1601 ~      1120
    */
   let responsiveWidth = [
-    [413,380],
-    [567,528],
-    [1200,640],
+    [1000,640],
     [1600,820],
     [1601,1120]
   ]
@@ -30,7 +33,7 @@ function doLazyload ($) {
     //$image.attr('data-src', imageLink);
     //$image.removeAttr('src');
     imageLink = imageLink.split('?')[0];
-    $image.attr('src', `${imageLink}?nf_resize=fit&w=256`);
+    $image.attr('src', `${imageLink}?nf_resize=fit&w=380`);
 
     let width = $image.attr('width');
     if (width) {
