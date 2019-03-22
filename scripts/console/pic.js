@@ -63,9 +63,15 @@ function cleanPic(root) {
     });
 }
 
-hexo.extend.console.register('webp', '压缩', {
+hexo.extend.console.register('webp', '压缩，转换至webp格式', {
     arguments: [
-        { name: 'path', desc: '压缩路径' }
+        { name: 'path', desc: '压缩路径（相对于_post）' }
+    ],
+    options: [
+      {name: '-a, --all', desc: '转换所有`source/_post`下的图片至webp格式'},
+      {name: '-c, --clean', desc: '删除所有`source/_post`下已转换的图片'},
+      {name: '--images', desc: '转换`source/images`下的图片至webp格式'},
+      {name: '--path', desc: '自定义路径（完整）'}
     ]
 }, function (args) {
     console.log(args);
@@ -90,7 +96,11 @@ hexo.extend.console.register('webp', '压缩', {
 
     // post path
     if (args._[0]) {
-        path = 'source/_posts/' + hexo.config.post_base_dir + '/' + args._[0];
+        if (hexo.config.post_base_dir) {
+            path = 'source/_posts/' + hexo.config.post_base_dir + '/' + args._[0];
+        } else {
+            path = 'source/_posts/' + args._[0];
+        }
     }
 
     // custom path
@@ -105,8 +115,8 @@ hexo.extend.console.register('webp', '压缩', {
     }
 
     if (!path) {
-        console.log('不能路径为空！')
-        return;
+        console.log('路径不能为空！')
+        return this.call('help', {_: ['webp']});
     }
 
     //webp
