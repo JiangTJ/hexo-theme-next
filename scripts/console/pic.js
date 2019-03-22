@@ -1,5 +1,35 @@
 const imagemin = require('imagemin');
 const imageminWebp = require('imagemin-webp');
+const fs = require('fs');
+var path = require('path');
+
+function webpAllPic (root) {
+    fs.readdir(root,{
+        withFileTypes: true
+    },function (err, files) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        //console.log(files);
+        files.forEach(item => {
+            let temp = path.join(root,item.name);
+            if (item.isFile()) {
+                let pic = new RegExp('(.jpeg|.png|.jpg)$','gi');
+                if (pic.test(item.name)) {
+                    //console.error(temp);
+                    imagemin([temp], root, {
+                        use: [ imageminWebp({quality: 75}) ]
+                    }).then(() => {
+                        console.log('Images optimized: ' + temp);
+                    });
+                }
+            } else {
+                webpAllPic(temp);
+            }
+        });
+    });
+}
 
 hexo.extend.console.register('webp', '压缩', {
     arguments: [
@@ -9,8 +39,14 @@ hexo.extend.console.register('webp', '压缩', {
     console.log(args);
     let path = "";
 
+    // all
+    if (args.all || args.a) {
+        webpAllPic('source');
+        return;
+    }
+
     // images dir
-    if (args.all) {
+    if (args.images) {
         path = 'source/images';
     }
     
@@ -30,12 +66,16 @@ hexo.extend.console.register('webp', '压缩', {
         type = `/*.{${args.type}}`;
     }
 
+    if (!path) {
+        console.log('不能路径为空！')
+        return;
+    }
+
     //webp
     imagemin([path + type], path, {
         use: [
             imageminWebp({quality: 75})
-        ],
-        nocase: true
+        ]
     }).then(() => {
         console.log('Images optimized');
     });
