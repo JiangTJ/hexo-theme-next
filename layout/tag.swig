@@ -8,7 +8,7 @@
 
   {% if theme.scheme === 'Neet' %}
     <div id="posts" class="posts-expand posts-categories-left page-sidebar-moblie-hidden">
-      {% include '_neet/page-tags.swig' %}
+      {{ partial( '_neet/page-tags.swig') }}
     </div>
     <div class="posts-categories-right">
   {% endif %}
@@ -40,7 +40,7 @@
     </div>
   {% endif %}
 
-  {% include '_partials/pagination.swig' %}
+  {{ partial( '_partials/pagination.swig') }}
 
 {% endblock %}
 

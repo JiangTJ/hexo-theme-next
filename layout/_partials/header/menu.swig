@@ -41,12 +41,12 @@
   {% endif %}
 
   {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' || theme.scheme === 'Neet' %}
-    {% include 'sub-menu.swig' %}
+    {{ partial( 'sub-menu.swig') }}
   {% endif %}
 
   {% if hasSearch %}
     <div class="site-search">
-      {% include '../search/index.swig' %}
+      {{ partial( '../search/index.swig') }}
     </div>
   {% endif %}
 </nav>

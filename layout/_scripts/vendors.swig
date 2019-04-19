@@ -70,5 +70,3 @@
   {% set internal_script = url_for(theme.vendors._internal + '/' + internal) %}
   <script src="{{ theme.vendors[name] | default(internal_script) }}"></script>
 {% endfor %}
-
-{% include '../../../../source/_data/metric.swig' %}

@@ -4,10 +4,10 @@
 <header class="post-header">
 <{% if theme.seo %}h2{% else %}h1{% endif %} class="post-title" itemprop="name headline">
   分类
-  {% include '../_partials/post-edit.swig' %}
+  {{ partial( '../_partials/post-edit.swig') }}
 </{% if theme.seo %}h2{% else %}h1{% endif %}>
 <!-- <div class="post-meta">
-  {% include '../_partials/page/breadcrumb.swig' %}
+  {{ partial( '../_partials/page/breadcrumb.swig') }}
 </div> -->
 </header>
 

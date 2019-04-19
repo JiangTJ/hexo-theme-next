@@ -1,2 +1,2 @@
-{% include 'localsearch.swig' %}
-{% include 'algolia-search.swig' %}
+{{ partial( 'localsearch.swig') }}
+{{ partial( 'algolia-search.swig') }}
