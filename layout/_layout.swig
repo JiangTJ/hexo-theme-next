@@ -17,9 +17,9 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
-  {% include '_partials/head/head-unique.swig' %}
+  {{ partial( '_partials/head/head-unique.swig') }}
   <title>{% block title %}{% endblock %}</title>
-  {% include '_third-party/analytics/index.swig' %}
+  {{ partial( '_third-party/analytics/index.swig') }}
   {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
 </head>
 
@@ -34,7 +34,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
+      <div class="header-inner">{{ partial( '_partials/header/index.swig') }}</div>
     </header>
 
     {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
@@ -43,12 +43,12 @@
       <div class="main-inner">
         <div class="content-wrap">
           {% if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
-            {% include '_partials/header/sub-menu.swig' %}
+            {{ partial( '_partials/header/sub-menu.swig') }}
           {% endif %}
           <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
-          {% include '_partials/comments.swig' %}
+          {{ partial( '_partials/comments.swig') }}
         </div>
         {% if theme.sidebar.display !== 'remove' %}
           {% block sidebar %}{% endblock %}
@@ -59,7 +59,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
-        {% include '_third-party/analytics/analytics-with-widget.swig' %}
+        {{ partial( '_third-party/analytics/analytics-with-widget.swig') }}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -83,44 +83,44 @@
 
     {% if theme.baidushare and theme.baidushare.type === "slide" %}
       <div>
-        {% include '_partials/share/baidushare.swig' %}
+        {{ partial( '_partials/share/baidushare.swig') }}
       </div>
     {% endif %}
 
     {% if theme.add_this_id %}
       <div>
-        {% include '_partials/share/add-this.swig' %}
+        {{ partial( '_partials/share/add-this.swig') }}
       </div>
     {% endif %}
   </div>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
+  {{ partial( '_scripts/vendors.swig') }}
+  {{ partial( '_scripts/commons.swig') }}
 
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
+  {{ partial( scheme_script) }}
 
   {% block script_extra %}{% endblock %}
 
-  {% include '_scripts/next-boot.swig' %}
-  {% include '_scripts/scroll-cookie.swig' %}
-  {% include '_scripts/exturl.swig' %}
-  {% include '_third-party/quicklink.swig' %}
-  {% include '_third-party/comments/index.swig' %}
-  {% include '_third-party/search/index.swig' %}
-  {% include '_third-party/analytics/lean-analytics.swig' %}
-  {% include '_third-party/analytics/firestore.swig' %}
-  {% include '_third-party/math/index.swig' %}
-  {% include '_third-party/pdf.swig' %}
-  {% include '_third-party/mermaid.swig' %}
-  {% include '_third-party/baidu-push.swig' %}
-  {% include '_third-party/schedule.swig' %}
-  {% include '_third-party/needsharebutton.swig' %}
-  {% include '_third-party/rating.swig' %}
-  {% include '_third-party/pangu.swig' %}
-  {% include '_third-party/bookmark.swig' %}
-  {% include '_third-party/copy-code.swig' %}
-  {% include '_third-party/chatra.swig' %}
-  {% include '_third-party/tidio.swig' %}
+  {{ partial( '_scripts/next-boot.swig') }}
+  {{ partial( '_scripts/scroll-cookie.swig') }}
+  {{ partial( '_scripts/exturl.swig') }}
+  {{ partial( '_third-party/quicklink.swig') }}
+  {{ partial( '_third-party/comments/index.swig') }}
+  {{ partial( '_third-party/search/index.swig') }}
+  {{ partial( '_third-party/analytics/lean-analytics.swig') }}
+  {{ partial( '_third-party/analytics/firestore.swig') }}
+  {{ partial( '_third-party/math/index.swig') }}
+  {{ partial( '_third-party/pdf.swig') }}
+  {{ partial( '_third-party/mermaid.swig') }}
+  {{ partial( '_third-party/baidu-push.swig') }}
+  {{ partial( '_third-party/schedule.swig') }}
+  {{ partial( '_third-party/needsharebutton.swig') }}
+  {{ partial( '_third-party/rating.swig') }}
+  {{ partial( '_third-party/pangu.swig') }}
+  {{ partial( '_third-party/bookmark.swig') }}
+  {{ partial( '_third-party/copy-code.swig') }}
+  {{ partial( '_third-party/chatra.swig') }}
+  {{ partial( '_third-party/tidio.swig') }}
 </body>
 </html>

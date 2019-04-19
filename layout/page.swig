@@ -24,7 +24,7 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block page">
-      {% include '_partials/page/page-header.swig' %}
+      {{ partial( '_partials/page/page-header.swig') }}
       {#################}
       {### PAGE BODY ###}
       {#################}
@@ -65,7 +65,7 @@
             </div>
           </div>
         {% elif page.type === 'schedule' %}
-          {% include 'schedule.swig' %}
+          {{ partial( 'schedule.swig') }}
         {% else %}
           {{ page.content }}
         {% endif %}
@@ -74,7 +74,7 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
-    {% include '_partials/page/breadcrumb.swig' %}
+    {{ partial( '_partials/page/breadcrumb.swig') }}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}
@@ -87,5 +87,5 @@
 {% endblock %}
 
 {% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
+  {{ partial( '_scripts/pages/post-details.swig') }}
 {% endblock %}

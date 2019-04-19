@@ -29,7 +29,7 @@
   {### END CATEGORY BLOCK ###}
   {##########################}
 
-  {% include '_partials/pagination.swig' %}
+  {{ partial( '_partials/pagination.swig') }}
 
 {% endblock %}
 

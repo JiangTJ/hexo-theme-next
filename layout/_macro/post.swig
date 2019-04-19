@@ -59,7 +59,7 @@
                 {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
               {% else -%}
                 {{- post.title -}}
-                {% include '../_partials/post-edit.swig' %}
+                {{ partial( '_partials/post-edit.swig') }}
               {% endif %}
             {% endif %}
           </{% if theme.seo %}h2{% else %}h1{% endif %}>
@@ -331,7 +331,7 @@
     </div>
 
     {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-      {% include '../_partials/post/post-related.swig' with { post: post } %}
+      {{ partial( '_partials/post/post-related.swig', { post: post }) }}
     {% endif %}
 
     {#####################}
@@ -339,7 +339,7 @@
     {#####################}
 
     {% if theme.wechat_subscriber.enable and not is_index %}
-      {% include '../_partials/post/wechat-subscriber.swig' %}
+      {{ partial( '_partials/post/wechat-subscriber.swig') }}
     {% endif %}
 
     {% if page.reward === undefined and theme.reward_settings.enable %}
@@ -349,13 +349,13 @@
     {% endif %}
     {% if reward_able and not is_index %}
       <div>
-        {% include '../_partials/post/reward.swig' %}
+        {{ partial( '_partials/post/reward.swig') }}
       </div>
     {% endif %}
 
     {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
       <div>
-        {% include '../_partials/post/post-copyright.swig' with { post: post } %}
+        {{ partial( '_partials/post/post-copyright.swig', { post: post }) }}
       </div>
     {% endif %}
 
@@ -403,7 +403,7 @@
           <div class="social_share">
             {% if theme.likely.enable %}
               <div>
-                {% include '../_partials/share/likely.swig' %}
+                {{ partial( '_partials/share/likely.swig') }}
               </div>
             {% endif %}
             {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
@@ -415,7 +415,7 @@
             {% endif %}
             {% if theme.baidushare.type === "button" %}
               <div>
-                {% include '../_partials/share/baidushare.swig' %}
+                {{ partial( '_partials/share/baidushare.swig') }}
               </div>
             {% endif %}
           </div>

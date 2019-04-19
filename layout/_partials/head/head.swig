@@ -61,7 +61,7 @@
   <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
 {% endif %}
 
-{% include "./external-fonts.swig" %}
+{{ partial( "./external-fonts.swig") }}
 
 {% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}
 {% if theme.vendors.fontawesome %}
@@ -121,8 +121,8 @@
 </script>
 
 {% if theme.custom_file_path.head %}
-  {% set custom_head = '../../../../../' + theme.custom_file_path.head %}
+  {% set custom_head = '../../_custom/head.swig' %}
 {% else %}
   {% set custom_head = '../../_custom/head.swig' %}
 {% endif %}
-{% include custom_head %}
+{{ partial( custom_head) }}

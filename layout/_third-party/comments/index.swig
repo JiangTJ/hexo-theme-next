@@ -1,19 +1,19 @@
 {% if theme.disqus.enable %}
-  {% include 'disqus.swig' %}
+  {{ partial( 'disqus.swig') }}
 {% elif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-  {% include 'changyan.swig' %}
+  {{ partial( 'changyan.swig') }}
 {% elif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-  {% include 'valine.swig' %}
+  {{ partial( 'valine.swig') }}
 {% endif %}
 
 {% if page.comments %}
   {% if theme.livere_uid %}
-    {% include 'livere.swig' %}
+    {{ partial( 'livere.swig') }}
   {% elif theme.gitment.enable and theme.gitment.client_id %}
-    {% include 'gitment.swig' %}
+    {{ partial( 'gitment.swig') }}
   {% elif theme.gitalk.enable %}
-    {% include 'gitalk.swig' %}
+    {{ partial( 'gitalk.swig') }}
   {% elif theme.disqusjs.enable and theme.disqusjs.apikey and theme.disqusjs.shortname %}
-    {% include 'disqusjs.swig' %}
+    {{ partial( 'disqusjs.swig') }}
   {% endif %}
 {% endif %}

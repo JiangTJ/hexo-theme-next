@@ -46,7 +46,7 @@
 
   {% if hasSearch %}
     <div class="site-search">
-      {% include '../search/index.swig' %}
+      {{ partial( '../search/index.swig') }}
     </div>
   {% endif %}
 </nav>

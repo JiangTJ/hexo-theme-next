@@ -19,5 +19,5 @@
 {% endblock %}
 
 {% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
+  {{ partial( '_scripts/pages/post-details.swig') }}
 {% endblock %}

@@ -1,1 +1,1 @@
-{% include 'pisces.swig' %}
+{{ partial( 'pisces.swig') }}
