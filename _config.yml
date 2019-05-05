@@ -439,7 +439,7 @@ tagcloud:
 # ---------------------------------------------------------------
 
 font:
-  enable: ture
+  enable: false
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
   host:
@@ -453,6 +453,7 @@ font:
   global:
     external: true
     family: Lato
+    # family: Dosis
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
