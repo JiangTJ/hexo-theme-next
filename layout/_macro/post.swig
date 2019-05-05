@@ -139,54 +139,11 @@
           {% endif %}
 
           {% if post.comments %}
-            {% macro comments() %}
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            {% endmacro %}
-            {% if theme.facebook_comments_plugin.enable %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}" itemprop="commentCount">0</span>
-                </a>
-              </span>
-            {% elif theme.disqus.enable and theme.disqus.count %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-              {{ comments() }}
-              {% if is_post() %}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              {% else %}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::{{ post.permalink }}" class="cy_cmt_count" data-xid="{{ post.path }}" itemprop="commentCount"></span>
-                </a>
-              {% endif %}
-            {% elif is_post() and theme.gitment.enable and theme.gitment.mint and theme.gitment.count %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
-            {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
-              {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
-                </a>
-              </span>
+            {% set comments_count_post_enable = is_post() and theme.comments.count.post %}
+            {% set comments_count_page_enable = not is_post() and theme.comments.count.page %}
+            {% if theme.comments.type and (comments_count_post_enable or comments_count_page_enable) %}
+              {% set comments_count_path = '_third-party/comments/' + theme.comments.type|lower + '/count.swig' %}
+              {{ partial(comments_count_path,{ post: post }) }}
             {% endif %}
           {% endif %}
 
@@ -342,12 +299,12 @@
       {{ partial( '_partials/post/wechat-subscriber.swig') }}
     {% endif %}
 
-    {% if page.reward === undefined and theme.reward.enable %}
+    {% if page.reward === undefined and theme.reward_settings.enable %}
       {% set reward_able = true %}
     {% else %}
       {% set reward_able = page.reward %}
     {% endif %}
-    {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
+    {% if reward_able and not is_index %}
       <div>
         {{ partial( '_partials/post/reward.swig') }}
       </div>
