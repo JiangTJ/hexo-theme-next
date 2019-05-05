@@ -358,9 +358,9 @@ reward_settings:
   enable: true
   animation: true
   #comment: Donate comment here
+  comment: 如果喜欢这篇文章,请我喝杯咖啡吧~~
 
 reward:
-  comment: 如果喜欢这篇文章,请我喝杯咖啡吧~~
   wechatpay: /images/wechatpay.png
   alipay: /images/alipay.jpg
 

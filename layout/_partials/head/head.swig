@@ -120,9 +120,4 @@
   };
 </script>
 
-{% if theme.custom_file_path.head %}
-  {% set custom_head = '../../_custom/head.swig' %}
-{% else %}
-  {% set custom_head = '../../_custom/head.swig' %}
-{% endif %}
-{{ partial( custom_head) }}
+{{ partial('_custom/head.swig') }}

@@ -165,12 +165,7 @@
             </div>
           {% endif %}
 
-          {% if theme.custom_file_path.sidebar %}
-            {% set custom_sidebar = '_custom/sidebar.swig' %}
-          {% else %}
-            {% set custom_sidebar = '../_custom/sidebar.swig' %}
-          {% endif %}
-          {{ partial( custom_sidebar) }}
+          {{ partial( '_custom/sidebar.swig' ) }}
         </div>
       </div>
 
