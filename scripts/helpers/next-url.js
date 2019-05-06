@@ -14,20 +14,8 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
   var siteHost = url.parse(config.url).hostname || config.url;
 
   var theme = hexo.theme.config;
-  var exturl = '';
   var tag = 'a';
   var attrs = { href: this.url_for(path) };
-
-  // If `exturl` enabled, set spanned links only on external links.
-  if (theme.exturl && data.protocol && data.hostname !== siteHost) {
-    tag = 'span';
-    exturl = 'exturl';
-    var encoded = Buffer.from(path).toString('base64');
-    attrs = {
-      class     : exturl,
-      'data-url': encoded
-    };
-  }
 
   options = options || {};
 
@@ -36,16 +24,7 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
 
   for (var i = 0, len = keys.length; i < len; i++) {
     key = keys[i];
-
-    /**
-     * If option have `class` attribute, add it to
-     * 'exturl' class if `exturl` option enabled.
-     */
-    if (exturl !== '' && key === 'class') {
-      attrs[key] += ' ' + options[key];
-    } else {
-      attrs[key] = options[key];
-    }
+    attrs[key] = options[key];
   }
 
   if (attrs.class && Array.isArray(attrs.class)) {
@@ -55,15 +34,8 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
   // If it's external link, rewrite attributes.
   if (data.protocol && data.hostname !== siteHost) {
     attrs.external = null;
-
-    if (!theme.exturl) {
-      // Only for simple link need to rewrite/add attributes.
-      attrs.rel = 'noopener';
-      attrs.target = '_blank';
-    } else {
-      // Remove rel attributes for `exturl` in main menu.
-      attrs.rel = null;
-    }
+    attrs.rel = 'noopener';
+    attrs.target = '_blank';
   }
 
   return htmlTag(tag, attrs, text);

@@ -118,9 +118,6 @@ seo: false
 # subtitle: Subtitle
 index_with_subtitle: false
 
-# Automatically add external URL with BASE64 encrypt & decrypt.
-exturl: false
-
 # Google Webmaster tools verification.
 # See: https://www.google.com/webmasters
 #google_site_verification:

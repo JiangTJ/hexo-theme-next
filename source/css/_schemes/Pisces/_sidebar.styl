@@ -8,7 +8,7 @@
   // or Affix (position: fixed) will not work in Google Chrome.
   -webkit-transform: none;
 
-  a, span.exturl {
+  a {
     color: $black-light;
 
     &:hover {
@@ -74,21 +74,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  span.exturl {
-    font-size: 13px;
-  }
 }
 
 .links-of-author-item {
   sidebar-inline-links-item();
-  a:before, span.exturl:before { display: none; }
-  a, span.exturl {
+  a:before { display: none; }
+  a {
     border-bottom: none;
     text-decoration: underline;
   }
 
-  a, span.exturl {
+  a {
     show();
     text-decoration: none;
 

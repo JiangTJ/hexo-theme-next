@@ -104,7 +104,6 @@
 
   {{ partial( '_scripts/next-boot.swig') }}
   {{ partial( '_scripts/scroll-cookie.swig') }}
-  {{ partial( '_scripts/exturl.swig') }}
   {{ partial( '_third-party/quicklink.swig') }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}

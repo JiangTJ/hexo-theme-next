@@ -10,6 +10,7 @@ Cake is a lovely theme, based on [NexT](https://github.com/theme-next/hexo-theme
 ## Todo List
 - [x] Refactor commment.
 - [x] Replace include to partial.
+- [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [ ] Refactor fonts.
 - [ ] Refactor post_mate.
 - [ ] Remove Muse Mist Pisces.
