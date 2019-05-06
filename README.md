@@ -1,9 +1,9 @@
 <div align="right">Language: :us:
 <a title="Chinese" href="docs/zh-CN/README.md">:cn:</a></div>
 
-# <div align="center">:fish_cake: Cake</div>
+# Hexo Theme Cake
 
-Cake is a lovely theme, based on [NexT](https://github.com/theme-next/hexo-theme-next).
+:fish_cake: It's a lovely theme, based on [NexT](https://github.com/theme-next/hexo-theme-next).
 
 <img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg">
 
