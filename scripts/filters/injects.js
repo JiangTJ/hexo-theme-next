@@ -39,13 +39,13 @@ hexo.on('generateBefore', function() {
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
   injectType.forEach(type => {
-    hexo.theme.config.injects[type] = []
+    hexo.theme.config.injects[type] = {};
     injects[type].raws.forEach(injectObj => {
       let viewName = `inject/${type}/${injectObj.name}.swig`;
       hexo.theme.setView(viewName, injectObj.raw);
-      hexo.theme.config.injects[type].push({
-        name: viewName
-      });
+      hexo.theme.config.injects[type][injectObj.name]={
+        view: viewName
+      };
     });
   });
 
