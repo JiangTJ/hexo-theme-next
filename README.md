@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg">
 
 ## Todo List
+- [x] Add new filter `theme_inject`. For custom head header and sidebar (comment post_mate in future);
 - [x] Refactor commment.
 - [x] Replace include to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.

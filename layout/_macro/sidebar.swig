@@ -165,7 +165,9 @@
             </div>
           {% endif %}
 
-          {{ partial( '_custom/sidebar.swig' ) }}
+          {% for custom_sidebar in theme.injects.sidebar %}
+            {{ partial(custom_sidebar.name) }}
+          {% endfor %}
         </div>
       </div>
 

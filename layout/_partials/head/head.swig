@@ -120,4 +120,7 @@
   };
 </script>
 
-{{ partial('_custom/head.swig') }}
+{# {{ partial('_custom/head.swig') }} #}
+{% for custom_head in theme.injects.head %}
+  {{ partial(custom_head.name) }}
+{% endfor %}

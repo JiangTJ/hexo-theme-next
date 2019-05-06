@@ -1,3 +1,5 @@
 {{ partial('_partials/header/brand.swig', {}, {cache: theme.cache.enable}) }}
 {{ partial( 'menu.swig') }}
-{{ partial( '_custom/header.swig') }}
+{% for custom_header in theme.injects.header %}
+  {{ partial(custom_header.name) }}
+{% endfor %}
