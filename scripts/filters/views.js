@@ -21,7 +21,4 @@ function setEmptyCommentsViews(fileName) {
 hexo.extend.filter.register('before_generate', function() {
   setEmptyCommentsViews('count.swig');
   setEmptyCommentsViews('index.swig');
-  setDefaultEmptyView('_custom/head.swig');
-  setDefaultEmptyView('_custom/header.swig');
-  setDefaultEmptyView('_custom/sidebar.swig');
 });

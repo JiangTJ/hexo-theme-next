@@ -1,15 +1,11 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
 
 class Inject {
   constructor(){
     this.raws = [];
   }
-  // getRaws(){
-  //   return raws;
-  // }
   raw(name, raw, ...args){
     this.raws.push({
       name,
