@@ -10,16 +10,18 @@ class Inject {
   // getRaws(){
   //   return raws;
   // }
-  raw(name, raw){
+  raw(name, raw, ...args){
     this.raws.push({
       name,
-      raw
+      raw,
+      args
     });
   }
-  file(name, file){
+  file(name, file, ...args){
     this.raws.push({
       name,
-      raw: fs.readFileSync(file).toString()
+      raw: fs.readFileSync(file).toString(),
+      args
     });
   }
 }
@@ -44,7 +46,9 @@ hexo.on('generateBefore', function() {
       let viewName = `inject/${type}/${injectObj.name}.swig`;
       hexo.theme.setView(viewName, injectObj.raw);
       hexo.theme.config.injects[type][injectObj.name]={
-        view: viewName
+        layout: viewName,
+        locals: injectObj.args[0],
+        options: injectObj.args[1],
       };
     });
   });

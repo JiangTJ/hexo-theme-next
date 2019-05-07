@@ -165,8 +165,8 @@
             </div>
           {% endif %}
 
-          {% for inject_name,inject_options in theme.injects.sidebar %}
-            {{ partial(inject_options.view) }}
+          {% for inject_name,inject_args in theme.injects.sidebar %}
+            {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
           {% endfor %}
         </div>
       </div>
