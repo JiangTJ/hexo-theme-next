@@ -11,11 +11,11 @@ cache:
 # For example, you want to put your custom styles file outside theme directory in root `source/_data`, set `styles: source/_data/styles.styl`
 custom_file_path:
   # Default path: source/css/_variables/custom.styl
-  variables: source/_data/variables.styl
+  #variables: source/_data/variables.styl
   # Default path: source/css/_mixins/custom.styl
   #mixins: source/_data/mixins.styl
   # Default path: source/css/_custom/custom.styl
-  styles: source/_data/styles.styl
+  #styles: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -24,17 +24,17 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon/xin-64.png
-  medium: /images/favicon/xin-128.png
-  apple_touch_icon: /images/favicon/xin-128.png
-  safari_pinned_tab: /images/favicon/xin.svg
+  #small: /images/favicon-64.png
+  #medium: /images/favicon-128.png
+  #apple_touch_icon: /images/favicon-128.png
+  #safari_pinned_tab: /images/favicon.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set rss to false to disable feed link.
 # Leave rss as blank to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
-rss: rss2.xml
+#rss: rss2.xml
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -145,15 +145,6 @@ menu:
   archives: /archives/ || archive
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  #更多:
-    #default: /more/ || info-circle
-    #我: https://jiangtj.gitlab.io/cover || heart
-    #数据: https://chro.j-time.cn/sources/1/dashboards/2 || sitemap
-    #schedule: /schedule/ || calendar
-    #公告: /update/ || cogs
-    #工具: /tools/ || briefcase
-    #VPN: /vpn/ || plane
-    
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -334,10 +325,9 @@ wechat_subscriber:
 reward_settings:
   # If true, reward would be displayed in every article by default.
   # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
-  enable: true
+  enable: false
   animation: true
-  #comment: Donate comment here
-  comment: 如果喜欢这篇文章,请我喝杯咖啡吧~~
+  comment: Donate comment here
 
 reward:
   wechatpay: /images/wechatpay.png

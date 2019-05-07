@@ -13,6 +13,7 @@
 - [x] Replace include to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
+- [ ] Refactor style ui etc.
 - [ ] Refactor fonts.
 - [ ] Refactor post_mate.
 - [ ] Remove Muse Mist Pisces.
