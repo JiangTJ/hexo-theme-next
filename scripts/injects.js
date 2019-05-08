@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const injectType = ['head', 'header', 'sidebar'];
+const injectType = ['head', 'header', 'sidebar', 'bodyEnd'];
 
 class Inject {
   constructor() {

@@ -106,7 +106,6 @@
   {{ partial( '_third-party/analytics/lean-analytics.swig') }}
   {{ partial( '_third-party/analytics/firestore.swig') }}
   {{ partial( '_third-party/math/index.swig') }}
-  {{ partial( '_third-party/baidu-push.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig') }}
   {{ partial( '_third-party/rating.swig') }}
@@ -115,5 +114,10 @@
   {{ partial( '_third-party/copy-code.swig') }}
   {{ partial( '_third-party/chatra.swig') }}
   {{ partial( '_third-party/tidio.swig') }}
+
+  {% for inject_name,inject_args in theme.injects.bodyEnd %}
+    {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+  {% endfor %}
+
 </body>
 </html>
