@@ -18,3 +18,17 @@
 - [ ] Refactor post_mate.
 - [ ] Remove Muse Mist Pisces.
 - [ ] Remove cache.enable option. Should always true.
+
+## Feature
+
+Speed
+- orign 242 files generated ≈≈ 6.5 s
+- new   241 files generated ≈≈ 4.5 s
+
+Inject
+```js
+hexo.extend.filter.register('theme_inject', function(injects) {
+  injects.head.file('custom', 'source/_data/head.swig', {}, {cache: true});
+  injects.sidebar.raw('custom', 'Put some in sidebar!');
+});
+```

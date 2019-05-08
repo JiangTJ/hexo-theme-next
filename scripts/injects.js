@@ -26,7 +26,6 @@ injectType.forEach((item) => {
 });
 
 module.exports =  function(hexo) {
-
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
   injectType.forEach((type) => {
@@ -41,7 +40,6 @@ module.exports =  function(hexo) {
       };
     });
   });
-
-}
+};
 
 
