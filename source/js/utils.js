@@ -42,11 +42,6 @@ NexT.utils = NexT.$u = {
     });
   },
 
-  lazyLoadPostsImages: function() {
-    var observer = lozad();
-    observer.observe();
-  },
-
   /**
    * Tabs tag listener (without twitter bootstrap).
    */

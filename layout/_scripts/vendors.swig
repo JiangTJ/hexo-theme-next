@@ -13,10 +13,6 @@
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}
 
-{% if theme.lazyload %}
-  {% set js_vendors.lazyload = 'jquery_lazyload/jquery.lazyload.js?v=1.9.7' %}
-{% endif %}
-
 {% set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
 {% set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
 

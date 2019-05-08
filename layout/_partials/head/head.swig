@@ -107,7 +107,6 @@
     back2top_sidebar: {{ theme.back2top.sidebar }},
     fancybox: {{ theme.fancybox }},
     fastclick: {{ theme.fastclick }},
-    lazyload: {{ theme.lazyload }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     algolia: {

@@ -803,10 +803,6 @@ fancybox: true
 # Dependencies: https://github.com/theme-next/theme-next-fastclick
 fastclick: false
 
-# Vanilla JavaScript plugin for lazyloading images.
-# Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: true
-
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
 pace: true
@@ -887,12 +883,6 @@ vendors:
   # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
   # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
   fastclick:
-
-  # Internal version: 1.9.7
-  # See: https://github.com/tuupola/jquery_lazyload
-  # Example:
-  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-  lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
   # Internal version: 1.2.1
   # See: http://velocityjs.org
