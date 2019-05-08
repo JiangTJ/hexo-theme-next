@@ -95,5 +95,5 @@
 {% endblock %}
 
 {% block script_extra %}
-  {{ partial( '_scripts/pages/post-details.swig') }}
+  {{ partial( '_scripts/pages/post-details.swig', {}, {cache: true}) }}
 {% endblock %}
