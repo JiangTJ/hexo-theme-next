@@ -94,16 +94,13 @@
     {% endif %}
   </div>
 
-  {{ partial( '_scripts/vendors.swig') }}
-  {{ partial( '_scripts/commons.swig') }}
-
-  {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {{ partial( scheme_script) }}
+  {{ partial( '_scripts/vendors.swig', {}, {cache: true}) }}
+  {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
 
   {% block script_extra %}{% endblock %}
 
-  {{ partial( '_scripts/next-boot.swig') }}
-  {{ partial( '_scripts/scroll-cookie.swig') }}
+  {{ partial( '_scripts/next-boot.swig', {}, {cache: true}) }}
+  {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/quicklink.swig') }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}

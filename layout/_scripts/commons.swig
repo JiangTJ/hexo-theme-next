@@ -1,7 +1,11 @@
 {%
   set js_commons = [
     'utils.js',
-    'motion.js'
+    'motion.js',
+
+    'affix.js',
+    'schemes/pisces.js',
+
   ]
 %}
 
