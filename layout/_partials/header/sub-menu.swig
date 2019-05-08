@@ -1,8 +1,6 @@
 {% if not is_home() && not is_post() %}
   {% if theme.menu %}
 
-    {% import '../../_macro/menu/menu-item.swig' as menu_item %}
-
     {# Submenu & Submenu-2 #}
     {% for name, value in theme.menu %}
       {% set respath = value %}
@@ -26,7 +24,7 @@
                 {% else %}
                   {% set respath = parentValue + subvalue %}
                 {% endif %}
-                {{ menu_item.render(subname, respath) }}
+                {{ partial( '_macro/menu/menu-item.swig', {name: subname, value: respath}) }}
               {% endif %}
             {% else %}
               {# For 'default' submenu item in main submenu #}
@@ -34,7 +32,7 @@
               {% for subname2, subvalue2 in subvalue %}
                 {% if subname2 == 'default' %}
                   {% set respath = parentValue + subvalue2 %}
-                  {{ menu_item.render(subname, respath) }}
+                  {{ partial( '_macro/menu/menu-item.swig', {name: subname, value: respath}) }}
                 {% endif %}
               {% endfor %}
             {% endif %}
@@ -72,7 +70,7 @@
                           {% else %}
                             {% set respath2 = parentValue + parentSubValue + subvalue2 %}
                           {% endif %}
-                          {{ menu_item.render(subname2, respath2) }}
+                          {{ partial( '_macro/menu/menu-item.swig', {name: subname2, value: respath2}) }}
                         {% endif %}
                       {% endfor %}
                       </ul>

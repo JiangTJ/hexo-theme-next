@@ -1,6 +1,3 @@
-{% macro render(name, value) %}
-{% import 'menu-badge.swig' as menu_badge %}
-
   {% set itemURL = value.split('||')[0] | trim %}
   {% if itemURL.indexOf('http') != 0 %}
     {% set itemURL = itemURL | replace('//', '/', 'g') %}
@@ -14,11 +11,9 @@
     {% endif %}
 
     {% if theme.menu_settings.badges %}
-      {% set menuBadge = menu_badge.render(name) | trim %}
+      {% set menuBadge = partial('_macro/menu/menu-badge.swig', {name}) | trim %}
     {% endif %}
 
     {{ next_url(menuURL, menuIcon + menuText + menuBadge, {rel: 'section'}) }}
 
   </li>
-
-{% endmacro %}

@@ -1,5 +1,3 @@
-{% macro render(name) %}
-
   {% set badges = {
     archives: site.posts.length,
     categories: site.categories.length,
@@ -10,5 +8,3 @@
       <span class="badge">{{ count }}</span>
     {% endif %}
   {% endfor %}
-
-{% endmacro %}

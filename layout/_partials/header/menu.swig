@@ -1,5 +1,3 @@
-{% import '../../_macro/menu/menu-item.swig' as menu_item %}
-
 <nav class="site-nav">
   {% if theme.menu %}
     <ul id="menu" class="menu">
@@ -12,13 +10,13 @@
             {% set respath = subpath %}
             {% if itemName == 'default' %}
               {% set itemName = name.toLowerCase() %}
-              {{ menu_item.render(name, respath) }}
+              {{ partial( '_macro/menu/menu-item.swig', {name: name, value: respath}) }}
             {% endif %}
           {% endfor %}
         {% else %}
         {# Main Menu (standart menu items) #}
           {% set itemName = name.toLowerCase() %}
-          {{- menu_item.render(name, respath) | trim -}}
+          {{- partial( '_macro/menu/menu-item.swig', {name: name, value: respath}) | trim -}}
         {%- endif -%}
       {%- endfor %}
 
