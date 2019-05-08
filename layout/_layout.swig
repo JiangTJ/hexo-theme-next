@@ -16,11 +16,11 @@
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
-  {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_partials/head/head.swig', {}, {cache: true}) }}
   {{ partial( '_partials/head/head-unique.swig') }}
   <title>{% block title %}{% endblock %}</title>
   {{ partial( '_third-party/analytics/index.swig') }}
-  {{ partial('_scripts/noscript.swig', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_scripts/noscript.swig', {}, {cache: true}) }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
@@ -37,7 +37,7 @@
       <div class="header-inner">{{ partial( '_partials/header/index.swig') }}</div>
     </header>
 
-    {{ partial('_partials/github-banner.swig', {}, {cache: theme.cache.enable}) }}
+    {{ partial('_partials/github-banner.swig', {}, {cache: true}) }}
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -58,7 +58,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        {{ partial('_partials/footer.swig', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_partials/footer.swig', {}, {cache: true}) }}
         {{ partial( '_third-party/analytics/analytics-with-widget.swig') }}
         {% block footer %}{% endblock %}
       </div>
@@ -107,11 +107,11 @@
   {{ partial( '_third-party/analytics/firestore.swig') }}
   {{ partial( '_third-party/math/index.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
-  {{ partial( '_third-party/needsharebutton.swig') }}
+  {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/rating.swig') }}
-  {{ partial( '_third-party/pangu.swig') }}
-  {{ partial( '_third-party/bookmark.swig') }}
-  {{ partial( '_third-party/copy-code.swig') }}
+  {{ partial( '_third-party/pangu.swig', {}, {cache: true}) }}
+  {{ partial( '_third-party/bookmark.swig', {}, {cache: true}) }}
+  {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
   {% for inject_name,inject_args in theme.injects.bodyEnd %}
     {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
