@@ -13,12 +13,15 @@
 - [x] Replace include to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
+- [x] Remove quicklink. (inject)
 - [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)
 - [ ] Remove cache.enable option. Should always true. (doing)
 - [ ] Refactor fonts.
 - [ ] Refactor post_mate.
+
+(inject): it can be impl with inject in the future.
 
 ## Feature
 

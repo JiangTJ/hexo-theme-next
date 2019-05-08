@@ -101,7 +101,6 @@
 
   {{ partial( '_scripts/next-boot.swig', {}, {cache: true}) }}
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
-  {{ partial( '_third-party/quicklink.swig') }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}
   {{ partial( '_third-party/analytics/lean-analytics.swig') }}
