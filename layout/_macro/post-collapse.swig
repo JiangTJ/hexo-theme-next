@@ -1,5 +1,3 @@
-{% macro render(post) %}
-
   <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
@@ -29,5 +27,3 @@
 
     </header>
   </article>
-
-{% endmacro %}

@@ -1,5 +1,4 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
 
 {% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
@@ -8,7 +7,7 @@
 {% block content %}
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    {{ partial('_macro/post.swig', {post: page}) }}
   </div>
 
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
 
 {% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
 
@@ -10,7 +9,7 @@
 {% block content %}
   <section id="posts" class="posts-expand">
     {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
+      {{ partial('_macro/post.swig', {is_index: true}) }}
     {% endfor %}
   </section>
 

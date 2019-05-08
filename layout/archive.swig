@@ -1,5 +1,4 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post-collapse.swig' as post_template %}
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
 
@@ -44,7 +43,7 @@
         {% endif %}
         {# endshow #}
 
-        {{ post_template.render(post) }}
+        {{ partial('_macro/post-collapse.swig') }}
 
       {% endfor %}
 

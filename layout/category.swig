@@ -1,5 +1,4 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post-collapse.swig' as post_template %}
 
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{% endblock %}
 
@@ -26,7 +25,7 @@
       </div>
 
       {% for post in page.posts %}
-        {{ post_template.render(post) }}
+        {{ partial('_macro/post-collapse.swig') }}
       {% endfor %}
     </div>
 

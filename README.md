@@ -11,6 +11,7 @@
 - [x] Add new filter `theme_inject`. For custom head header and sidebar (comment post_mate in future);
 - [x] Refactor commment.
 - [x] Replace include to partial.
+- [x] Replace import to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
 - [x] Remove cache.enable option. Should always true.
@@ -20,7 +21,6 @@
 - [x] Remove baidu-push. (inject)
 - [x] Remove chatra & tidio. (inject)
 - [x] Remove others commment(keep disqus valine). (inject)
-- [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)
 - [ ] Refactor fonts.
