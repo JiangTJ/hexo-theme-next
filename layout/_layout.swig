@@ -112,8 +112,6 @@
   {{ partial( '_third-party/pangu.swig') }}
   {{ partial( '_third-party/bookmark.swig') }}
   {{ partial( '_third-party/copy-code.swig') }}
-  {{ partial( '_third-party/chatra.swig') }}
-  {{ partial( '_third-party/tidio.swig') }}
 
   {% for inject_name,inject_args in theme.injects.bodyEnd %}
     {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}

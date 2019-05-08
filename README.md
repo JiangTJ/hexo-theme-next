@@ -17,6 +17,7 @@
 - [x] Remove pdf. (inject)
 - [x] Remove mermaid. (inject)
 - [x] Remove baidu-push. (inject)
+- [x] Remove chatra & tidio. (inject)
 - [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)

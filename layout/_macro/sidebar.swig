@@ -102,20 +102,6 @@
             </div>
           {% endif %}
 
-          {% if theme.chat.enable and theme.chat.service !== '' %}
-            <div class="chat motion-element">
-              {% if theme.chat.service == 'chatra' and theme.chatra.enable %}
-                <a onclick="Chatra('openChat', true)">
-              {% endif %}
-              {% if theme.chat.service == 'tidio' and theme.tidio.enable %}
-                <a onclick="tidioChatApi.open();">
-              {% endif %}
-              {% if theme.chat.icon %}<i class="fa fa-{{ theme.chat.icon }}"></i>{% endif %}
-                  {{ theme.chat.text }}
-                </a>
-            </div>
-          {% endif %}
-
           {% if theme.social %}
             <div class="links-of-author motion-element">
               {% for name, link in theme.social %}
