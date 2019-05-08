@@ -13,17 +13,18 @@
 - [x] Replace include to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
-- [ ] Refactor style ui etc.
+- [ ] Replace import to partial. (doing)
+- [ ] Refactor style ui etc. (doing)
+- [ ] Remove Muse Mist Pisces. (doing)
+- [ ] Remove cache.enable option. Should always true. (doing)
 - [ ] Refactor fonts.
 - [ ] Refactor post_mate.
-- [ ] Remove Muse Mist Pisces.
-- [ ] Remove cache.enable option. Should always true.
 
 ## Feature
 
 Speed
-- orign 242 files generated ≈≈ 6.5 s
-- new   241 files generated ≈≈ 4.5 s
+- origin 242 files generated ≈≈ 6.5 s
+- new    241 files generated ≈≈ 4.5 s
 
 Inject
 ```js
