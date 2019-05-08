@@ -15,6 +15,7 @@
 - [x] Remove fully override default configuration.
 - [x] Remove quicklink. (inject)
 - [x] Remove pdf. (inject)
+- [x] Remove mermaid. (inject)
 - [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)

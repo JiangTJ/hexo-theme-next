@@ -867,15 +867,6 @@ tabs:
     labels: true
   border_radius: 0
 
-# Mermaid tag
-mermaid:
-  enable: false
-  # Available themes: default | dark | forest | neutral
-  theme: forest
-  cdn: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
-  #cdn: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js
-
-
 # ---------------------------------------------------------------
 # Animation Settings
 # ---------------------------------------------------------------

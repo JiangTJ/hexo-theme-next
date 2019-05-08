@@ -106,7 +106,6 @@
   {{ partial( '_third-party/analytics/lean-analytics.swig') }}
   {{ partial( '_third-party/analytics/firestore.swig') }}
   {{ partial( '_third-party/math/index.swig') }}
-  {{ partial( '_third-party/mermaid.swig') }}
   {{ partial( '_third-party/baidu-push.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig') }}
