@@ -506,35 +506,6 @@ han: false
 # For more information: https://github.com/vinta/pangu.js
 pangu: false
 
-# Quicklink Support
-# Dependencies: https://github.com/theme-next/theme-next-quicklink
-# Visit https://github.com/GoogleChromeLabs/quicklink for details
-quicklink:
-  enable: false
-
-  # Quicklink (quicklink.umd.js script) is loaded on demand
-  # Add `quicklink: true` in Front Matter of the page or post you need
-  # Home page and archive page can be controlled through home and archive options below
-  home: true
-  archive: true
-
-  # Default (true) will initialize quicklink after the load event fires
-  delay: true
-  # Custom a time in milliseconds by which the browser must execute prefetching
-  timeout: 3000
-  # Default (true) will enable fetch() or falls back to XHR
-  priority: true
-
-  # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores
-  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
-  # Leave ignores as empty if you don't understand what it means
-  # Example:
-  # ignores:
-  #   - /\/api\/?/
-  #   - uri => uri.includes('.xml')
-  #   - (uri, el) => el.hasAttribute('noopener')
-  ignores:
-
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
@@ -1116,12 +1087,6 @@ vendors:
   # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
   # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
   pangu:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/GoogleChromeLabs/quicklink
-  # Example:
-  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
-  quicklink:
 
   # Internal version: 1.0.0
   # See: https://github.com/revir/need-more-share2
