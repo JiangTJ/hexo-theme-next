@@ -1,5 +1,4 @@
 {% extends '_layout.swig' %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
 
   {% block title %}{#
   #}{% set page_title_suffix = ' | ' + title %}{#
@@ -92,7 +91,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ sidebar_template.render(false) }}
+  {{ partial('_macro/sidebar.swig', {is_post: false}) }}
 {% endblock %}
 
 {% block script_extra %}

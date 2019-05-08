@@ -1,4 +1,3 @@
-{% macro render(is_post) %}
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -208,4 +207,3 @@
   {% if theme.sidebar.dimmer %}
     <div id="sidebar-dimmer"></div>
   {% endif %}
-{% endmacro %}
