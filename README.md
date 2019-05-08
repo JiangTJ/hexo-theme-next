@@ -18,6 +18,7 @@
 - [x] Remove mermaid. (inject)
 - [x] Remove baidu-push. (inject)
 - [x] Remove chatra & tidio. (inject)
+- [x] Remove others commment(keep disqus valine). (inject)
 - [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)
