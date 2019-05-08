@@ -14,6 +14,7 @@
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
 - [x] Remove quicklink. (inject)
+- [x] Remove pdf. (inject)
 - [ ] Replace import to partial. (doing)
 - [ ] Refactor style ui etc. (doing)
 - [ ] Remove Muse Mist Pisces. (doing)

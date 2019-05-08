@@ -867,19 +867,6 @@ tabs:
     labels: true
   border_radius: 0
 
-# PDF tag, requires two plugins: pdfObject and pdf.js
-# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
-# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
-# So, you must install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
-# See: https://github.com/theme-next/theme-next-pdf
-pdf:
-  enable: false
-  # Default height
-  height: 500px
-  pdfobject:
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
-
 # Mermaid tag
 mermaid:
   enable: false
