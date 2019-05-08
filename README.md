@@ -13,7 +13,7 @@
 - [x] Replace include to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
-- [x] Remove cache.enable option. Should always true. (doing)
+- [x] Remove cache.enable option. Should always true.
 - [x] Remove quicklink. (inject)
 - [x] Remove pdf. (inject)
 - [x] Remove mermaid. (inject)
