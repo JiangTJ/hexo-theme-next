@@ -50,8 +50,6 @@
               {% endif %}
 
               {% if site.categories.length > 0 %}
-                {% set categoriesPageQuery = site.pages.find({type: 'categories'}, {lean: true}) %}
-                {% set hasCategoriesPage = categoriesPageQuery.length > 0 %}
                 <div class="site-state-item site-state-categories">
                   {% if hasCategoriesPage %}
                     {% if theme.menu.categories %}
@@ -60,19 +58,13 @@
                       <a href="{{ url_for(config.category_dir) + '/' }}">
                     {% endif %}
                   {% endif %}
-                    {% set visibleCategories = 0 %}
-                    {% for cat in site.categories %}
-                      {% if cat.length %}{% set visibleCategories += 1 %}{% endif %}
-                    {% endfor %}
-                    <span class="site-state-item-count">{{ visibleCategories }}</span>
+                    <span class="site-state-item-count">{{ site.categories.length }}</span>
                     <span class="site-state-item-name">{{ __('state.categories') }}</span>
                   {% if hasCategoriesPage %}</a>{% endif %}
                 </div>
               {% endif %}
 
               {% if site.tags.length > 0 %}
-                {% set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
-                {% set hasTagsPage = tagsPageQuery.length > 0 %}
                 <div class="site-state-item site-state-tags">
                   {% if hasTagsPage %}
                     {% if theme.menu.tags %}
@@ -81,11 +73,7 @@
                       <a href="{{ url_for(config.tag_dir) + '/' }}">
                     {% endif %}
                   {% endif %}
-                    {% set visibleTags = 0 %}
-                    {% for tag in site.tags %}
-                      {% if tag.length %}{% set visibleTags += 1 %}{% endif %}
-                    {% endfor %}
-                    <span class="site-state-item-count">{{ visibleTags }}</span>
+                    <span class="site-state-item-count">{{ site.tags.length }}</span>
                     <span class="site-state-item-name">{{ __('state.tags') }}</span>
                   {% if hasTagsPage %}</a>{% endif %}
                 </div>
