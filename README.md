@@ -30,9 +30,9 @@
 
 ## Feature
 
-Speed(i7 SATA-SSD)
+Speed(i7-6700K SATA-SSD)
 - origin(next:7.1.0) 242 files generated ≈≈ 6.5 s
-- new                241 files generated ≈≈ 4.5 s
+- new                241 files generated ≈≈ 4.8 s
 
 Speed(i5-6200U PCIE-SSD)
 - origin(next:7.1.0) 242 files generated ≈≈ 12 s
