@@ -6,7 +6,7 @@ $(document).ready(function() {
   var sidebarOffset = CONFIG.sidebar.offset || 12;
 
   function getHeaderOffset() {
-    return $('.header-inner').height() + sidebarOffset;
+    return $('.header-inner').height() + sidebarOffset + 10;
   }
 
   function getFooterOffset() {
