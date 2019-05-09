@@ -14,7 +14,9 @@
 - [x] Replace import to partial.
 - [x] Remove exturl. There are not any benefit with BASE64 encrypt & decrypt.
 - [x] Remove fully override default configuration.
-- [x] Remove cache.enable option. Should always true.
+- [x] Remove cache.enable option. Enable always.
+- [x] Remove excerpt_description option. Disable always.
+- [x] Remove post.photos.
 - [x] Remove quicklink. (inject)
 - [x] Remove pdf. (inject)
 - [x] Remove mermaid. (inject)

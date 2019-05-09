@@ -205,7 +205,7 @@
             </div>
           {% endif %}
 
-          {% if post.description and (not theme.excerpt_description or not is_index) %}
+          {% if post.description %}
             <div class="post-description">{#
               #}{{ post.description }}{#
             #}</div>
@@ -220,34 +220,8 @@
     {#################}
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
-      {# Gallery support #}
-      {% if post.photos and post.photos.length %}
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          {% set COLUMN_NUMBER = 3 %}
-          {% for photo in post.photos %}
-            {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
-              <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
-            {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
-          {% endfor %}
-
-          {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than COLUMN_NUMBER #}
-          {% if post.photos.length % COLUMN_NUMBER > 0 %}</div>{% endif %}
-        </div>
-      {% endif %}
-
       {% if is_index %}
-        {% if post.description and theme.excerpt_description %}
-          {{ post.description }}
-          <!--noindex-->
-          {% if theme.read_more_btn %}
-            <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}">
-                {{ __('post.read_more') }} &raquo;
-              </a>
-            </div>
-          {% endif %}
-          <!--/noindex-->
-        {% elif post.excerpt %}
+        {% if post.excerpt %}
           {{ post.excerpt }}
           <!--noindex-->
           {% if theme.read_more_btn %}
