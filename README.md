@@ -25,6 +25,7 @@
 - [ ] Remove Muse Mist Pisces. (doing)
 - [ ] Refactor fonts.
 - [ ] Refactor post_mate.
+- [ ] Fix issue the categories/tags count contains _drafts.
 
 (inject): it can be impl with inject in the future.
 
@@ -32,7 +33,7 @@
 
 Speed(i7-6700K SATA-SSD)
 - origin(next:7.1.0) 242 files generated ≈≈ 6.5 s
-- new                241 files generated ≈≈ 4.8 s
+- new                241 files generated ≈≈ 3.8 s
 
 Speed(i5-6200U PCIE-SSD)
 - origin(next:7.1.0) 242 files generated ≈≈ 12 s
