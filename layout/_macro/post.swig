@@ -17,6 +17,7 @@
   {### POST BLOCK ###}
   {##################}
   <div class="post-block">
+    {{ partial( '_partials/post/banner.swig') }}
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
