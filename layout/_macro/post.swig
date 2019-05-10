@@ -1,5 +1,3 @@
-  {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
-
   {% set post_class = 'post post-type-' + post.type | default('normal') %}
   {% if post_extra_class > 0 %}
     {% set post_class = post_class + ' ' + post_extra_class | default('') %}
@@ -17,51 +15,37 @@
   {### POST BLOCK ###}
   {##################}
   <div class="post-block">
-    {{ partial( '_partials/post/banner.swig') }}
-    <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}"/>
 
+    {# POST info #}
+    <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}"/>
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ author }}"/>
       <meta itemprop="description" content="{{ description }}"/>
       <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"/>
     </span>
-
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}"/>
     </span>
 
-    {% if not headlessPost %}
+    {{ partial( '_partials/post/banner.swig') }}
+
       <header class="post-header">
 
-        {# Not to show title for quote posts that do not have a title #}
-        {% if not (is_index and post.type === 'quote' and not post.title) %}
-          <{% if theme.seo %}h2{% else %}h1{% endif %} class="post-title{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">{#
-          #}{# Link posts #}{#
-          #}{% if post.link %}
-              {% if post.sticky > 0 %}
-                {{ post.sticky }}
-                <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
-              {% endif %}
+        {# title #}
+        {% if post.title %}
+          <h2 class="post-title" itemprop="name headline">
+           {% if post.link %}
               {% set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
               {% set postText = post.title or post.link %}
               {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {% else %}{#
-            #}{% if is_index %}
-                {% if post.sticky > 0 %}
-                  <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
-                    <i class="fa fa-thumb-tack"></i>
-                  </span>
-                {% endif %}
-                {# Need to delete maybe? #}
+            {% else %}
+              {% if is_index %}
                 {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
               {% else -%}
                 {{- post.title -}}
-                {{ partial( '_partials/post-edit.swig') }}
               {% endif %}
             {% endif %}
-          </{% if theme.seo %}h2{% else %}h1{% endif %}>
+          </h2>
         {% endif %}
 
         <div class="post-meta">
@@ -146,66 +130,6 @@
             {% endif %}
           {% endif %}
 
-          {# LeanCloud PageView #}
-          {% if theme.leancloud_visitors.enable or (theme.valine.enable and theme.valine.appid and theme.valine.appkey and theme.valine.visitor) %}
-            <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              {% endif %}
-                <span class="leancloud-visitors-count"></span>
-            </span>
-          {% endif %}
-
-          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
-            <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
-            {% if theme.post_meta.item_text %} {{ __('post.views') + __('symbol.colon') }} {% endif %}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          {% endif %}
-
-          {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
-            <div class="post-symbolscount">
-              {% if not theme.symbols_count_time.separated_meta %}
-                <span class="post-meta-divider">|</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.symbols %}
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
-                {% endif %}
-                <span title="{{ __('symbols_count_time.count') }}">{#
-                #}{{ symbolsCount(post) }}{#
-              #}</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.symbols and config.symbols_count_time.time %}
-                <span class="post-meta-divider">|</span>
-              {% endif %}
-
-              {% if config.symbols_count_time.time %}
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                {% if theme.symbols_count_time.item_text_post %}
-                  <span class="post-meta-item-text">{{ __('symbols_count_time.time') }} &asymp;</span>
-                {% endif %}
-                <span title="{{ __('symbols_count_time.time') }}">{#
-                #}{{ symbolsTime(post, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}{#
-              #}</span>
-              {% endif %}
-            </div>
-          {% endif %}
-
           {% if post.description %}
             <div class="post-description">{#
               #}{{ post.description }}{#
@@ -214,7 +138,6 @@
 
         </div>
       </header>
-    {% endif %}
 
     {#################}
     {### POST BODY ###}
