@@ -30,14 +30,12 @@ use_seo = hexo-config('seo');
 .content-wrap {
   padding: initial;
   background: initial;
-  box-shadow: initial;
   border-radius: initial;
 }
 
 // Post & Comments blocks.
 .post-block {
   background: white;
-  box-shadow: $box-shadow-inner;
   border-radius: $border-radius-inner;
   margin-top: 10px;
 }
@@ -46,8 +44,6 @@ use_seo = hexo-config('seo');
 #posts > article + article {
   .post-block {
     margin-top: $sidebar-offset;
-    // Rewrite shadows & borders because all blocks have offsets.
-    box-shadow: $box-shadow;
     border-radius: $border-radius;
   }
 }
@@ -58,7 +54,6 @@ use_seo = hexo-config('seo');
   margin: auto;
   margin-top: $sidebar-offset;
   background: white;
-  box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
 
@@ -89,7 +84,6 @@ use_seo = hexo-config('seo');
   margin: $sidebar-offset 0 0;
   border-top: initial;
   background: white;
-  box-shadow: $box-shadow;
   border-radius: $border-radius;
   padding: 10px 0 10px;
 }
@@ -105,11 +99,9 @@ use_seo = hexo-config('seo');
 // Sub-menu(s).
 .sub-menu {
   border-bottom: initial !important;
-  box-shadow: $box-shadow-inner;
   // Adapt submenu(s) with post-blocks.
   &+ #content > #posts {
     .post-block {
-      box-shadow: $box-shadow;
       margin-top: $sidebar-offset;
       +tablet() {
         margin-top: $content-tablet-padding;
@@ -204,8 +196,6 @@ use_seo = hexo-config('seo');
   }
 
   .post-block {
-    // Rewrite shadows & borders because all blocks have offsets.
-    box-shadow: $box-shadow;
     border-radius: $border-radius;
   }
 
@@ -251,8 +241,6 @@ use_seo = hexo-config('seo');
 
   .post-block {
     min-height: auto;
-    // Rewrite shadows & borders because all blocks have offsets.
-    box-shadow: $box-shadow;
     border-radius: $border-radius;
   }
 

@@ -38,10 +38,6 @@
     </ul>
   {% endif %}
 
-  {% if theme.scheme === 'Muse' || theme.scheme === 'Mist' || theme.scheme === 'Neet' %}
-    {{ partial( 'sub-menu.swig') }}
-  {% endif %}
-
   {% if hasSearch %}
     <div class="site-search">
       {{ partial( '../search/index.swig') }}
