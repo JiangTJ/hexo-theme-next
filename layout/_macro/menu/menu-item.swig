@@ -4,7 +4,10 @@
   {% endif %}
   <li class="menu-item menu-item-{{ itemName | replace(' ', '-', 'g') }}{{ item_active(itemURL, 'menu-item-active') }}">
 
-    {% set menuText = __('menu.' + name) | replace('menu.', '') %}
+    {% set menuText = __('menu.' + name) %}
+    {% if menuText.indexOf('menu.') == 0 %}
+      {% set menuText = menuText | replace('menu.', '') | title %}
+    {% endif %}
     {% set menuURL = itemURL %}
     {% if theme.menu_settings.icons %}
       {% set menuIcon = '<i class="menu-item-icon fa fa-fw fa-' + value.split('||')[1] | trim | default('question-circle') + '"></i> <br/>' %}
