@@ -1,25 +1,7 @@
 .posts-expand .post-title {
   word-wrap();
-  text-align: center;
   font-weight: $posts-expand-title-font-weight;
-  padding: 15px 10px 0;
-
-  if hexo-config('post_edit.enable') {
-    .post-edit-link {
-      color: #bbb;
-      display: inline-block;
-      float: right;
-      border-bottom: none;
-      the-transition-ease-in();
-      margin-left: -1.2em;
-      +mobile-small() {
-        margin-left: initial;
-      }
-      &:hover {
-        color: black;
-      }
-    }
-  }
+  padding: 20px 20px 10px;
 }
 
 .posts-expand .post-title-link {
