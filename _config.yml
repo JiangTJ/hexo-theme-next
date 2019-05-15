@@ -422,16 +422,6 @@ font:
     family: Lobster
     size: 24
 
-  # Font settings for <code> and code blocks.
-  codes:
-    external: true
-    # family: Satisfy
-    # family: IM Fell English
-    # family: PT Serif
-    family:
-    size:
-
-
 # ---------------------------------------------------------------
 # Third Party Services Settings
 # See: https://theme-next.org/docs/third-party-services/
