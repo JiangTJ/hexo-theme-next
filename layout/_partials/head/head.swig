@@ -106,7 +106,6 @@
     back2top: {{ theme.back2top.enable }},
     back2top_sidebar: {{ theme.back2top.sidebar }},
     fancybox: {{ theme.fancybox }},
-    fastclick: {{ theme.fastclick }},
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     algolia: {
