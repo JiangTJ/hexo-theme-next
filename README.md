@@ -3,7 +3,7 @@
 
 # Hexo Theme Cake
 
-:fish_cake: It's a lovely theme, based on [NexT](https://github.com/theme-next/hexo-theme-next).
+:shortcake: It's a lovely theme, based on [NexT](https://github.com/theme-next/hexo-theme-next).
 
 <img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg">
 
@@ -21,14 +21,6 @@
 
 
 ## Feature
-
-Speed(i7-6700K SATA-SSD)
-- origin(next:7.1.0) 242 files generated ≈≈ 6.5 s
-- new                241 files generated ≈≈ 3.8 s
-
-Speed(i5-6200U PCIE-SSD)
-- origin(next:7.1.0) 242 files generated ≈≈ 12 s
-- new                241 files generated ≈≈ 8.5 s
 
 Inject
 ```js
