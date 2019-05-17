@@ -306,8 +306,12 @@ reward_settings:
   comment: Donate comment here
 
 reward:
-  wechatpay: /images/wechatpay.png
-  alipay: /images/alipay.jpg
+  wechatpay:
+    icon: weixin
+    pic: /images/wechatpay.png
+  alipay:
+    name: 支
+    pic: /images/alipay.jpg
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
