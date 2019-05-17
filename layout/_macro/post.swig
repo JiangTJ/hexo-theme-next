@@ -99,9 +99,7 @@
       {% set reward_able = page.reward %}
     {% endif %}
     {% if reward_able and not is_index %}
-      <div>
-        {{ partial( '_partials/post/reward.swig') }}
-      </div>
+      {{ partial( '_partials/post/reward.swig') }}
     {% endif %}
 
     {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
