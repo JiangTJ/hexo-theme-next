@@ -779,10 +779,6 @@ motion:
 # To install 3.x: https://github.com/theme-next/theme-next-fancybox3
 fancybox: true
 
-# Polyfill to remove click delays on browsers with touch UIs.
-# Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
-
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
 pace: true
