@@ -20,7 +20,6 @@
   {{ partial( '_partials/head/head-unique.swig') }}
   <title>{% block title %}{% endblock %}</title>
   {{ partial( '_third-party/analytics/index.swig') }}
-  {{ partial('_scripts/noscript.swig', {}, {cache: true}) }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
