@@ -1,0 +1,1 @@
+<img class="reward-image" src="{{ url_for(reward_item.image) }}" />

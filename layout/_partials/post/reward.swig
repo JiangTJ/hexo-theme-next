@@ -1,29 +1,29 @@
-{% spaceless %}
-<div id="reward-container">
+<div class="reward-container">
   <div>{{ theme.reward_settings.comment }}</div>
-  <div class="reward-group">
-  {% for reward_item in theme.reward %}
-    <a class="reward-button">
-      {% if reward_item.icon %}<i class="fa fa-{{reward_item.icon}}" aria-hidden="true"></i>{% else %}{{reward_item.name}}{% endif %}
-    </a>
+  {% for reward_name,reward_item in theme.reward %}
+    <div class="reward-box {{reward_name}}">
+      {{ partial( '_partials/post/reward/simple.swig', {
+        reward_name: reward_name,
+        reward_item: reward_item
+      }, {cache: true}) }}
+    </div>
   {% endfor %}
-  </div>
-
-
-  {#
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    {{ __('reward.donate') }}
-  </button>
-
-    <div id="qr" style="display: none;">
-
-    {% for reward_item in theme.reward %}
-      <div style="display: inline-block">
-        <img src="{{ url_for(image) }}" alt="{{ author }} {{ reward_item.name }}"/>
-        <p>{{ translation }}</p>
-      </div>
+  <div class="reward-group">
+    {% for reward_name,reward_item in theme.reward %}
+      <a class="reward-button {{reward_name}}" onmouseover="rewardFunc.over('{{reward_name}}')" onmouseout="rewardFunc.out('{{reward_name}}')">
+        <span>{% if reward_item.icon %}<i class="fa fa-{{reward_item.icon}}" aria-hidden="true"></i>{% else %}{{reward_item.name}}{% endif %}</span>
+      </a>
     {% endfor %}
-  #}
   </div>
 </div>
-{% endspaceless %}
+
+<script defer>
+  var rewardFunc = {
+    over: function (name) {
+      document.querySelector(".reward-box." + name).style.display = "block";
+    },
+    out: function (name) {
+      document.querySelector(".reward-box." + name).style.display = "none";
+    }
+  }
+</script>
