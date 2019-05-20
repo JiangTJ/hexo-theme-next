@@ -1,13 +1,18 @@
 <div class="reward-container">
   <div>{{ theme.reward_settings.comment }}</div>
-  {% for reward_name,reward_item in theme.reward %}
+  {% for inject_name,inject_args in theme.injects.reward %}
+    <div class="reward-box {{inject_name}}">
+      {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+    </div>
+  {% endfor %}
+  {# {% for reward_name,reward_item in theme.reward %}
     <div class="reward-box {{reward_name}}">
       {{ partial( '_partials/post/reward/simple.swig', {
         reward_name: reward_name,
         reward_item: reward_item
       }, {cache: true}) }}
     </div>
-  {% endfor %}
+  {% endfor %} #}
   <div class="reward-group">
     {% for reward_name,reward_item in theme.reward %}
       <a class="reward-button {{reward_name}}" onmouseover="rewardFunc.over('{{reward_name}}')" onmouseout="rewardFunc.out('{{reward_name}}')">
