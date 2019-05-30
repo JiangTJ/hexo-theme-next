@@ -2,9 +2,18 @@
 
 const fs = require('fs');
 
-const injectType = ['head', 'header', 'bodyEnd', 'sidebar', 'reward'];
+const stylusInjectTypes = ['variable', 'mixin', 'style'];
+class StylusInject {
+  constructor() {
+    this.files = [];
+  }
+  push(file) {
+    this.files.push(file);
+  }
+}
 
-class Inject {
+const viewInjectTypes = ['head', 'header', 'bodyEnd', 'sidebar', 'reward'];
+class ViewInject {
   constructor() {
     this.raws = [];
   }
@@ -20,15 +29,27 @@ class Inject {
   }
 }
 
+// init injects var
 const injects = {}
-injectType.forEach((item) => {
-  injects[item] = new Inject();
+stylusInjectTypes.forEach((item) => {
+  injects[item] = new StylusInject();
+});
+viewInjectTypes.forEach((item) => {
+  injects[item] = new ViewInject();
 });
 
 module.exports =  function(hexo) {
+  // exec theme_inject filter
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
-  injectType.forEach((type) => {
+
+  //inject stylus
+  stylusInjectTypes.forEach((type) => {
+    hexo.theme.config.injects[type] = injects[type].files;
+  })
+
+  // inject views
+  viewInjectTypes.forEach((type) => {
     hexo.theme.config.injects[type] = {};
     injects[type].raws.forEach((injectObj) => {
       let viewName = `inject/${type}/${injectObj.name}.swig`;
