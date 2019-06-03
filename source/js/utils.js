@@ -16,13 +16,6 @@ NexT.utils = NexT.$u = {
         if ($imageWrapLink.length < 1) {
           var imageLink = $image.attr('data-srcset')?$image.attr('data-srcset').split('?')[0]:$image.attr('src');
           $imageWrapLink = $image.wrap('<a class="fancybox fancybox.image" href="' + imageLink + '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>').parent('a');
-          if ($image.is('.post-gallery img')) {
-            $imageWrapLink.addClass('post-gallery-img');
-            $imageWrapLink.attr('data-fancybox', 'gallery').attr('rel', 'gallery');
-          }
-          else if ($image.is('.group-picture img')) {
-            $imageWrapLink.attr('data-fancybox', 'group').attr('rel', 'group');
-          }
         }
 
         if (imageTitle && $imageWrapLink.is('.fancybox')) {
