@@ -2,9 +2,6 @@
   {% if post_extra_class > 0 %}
     {% set post_class = post_class + ' ' + post_extra_class | default('') %}
   {% endif %}
-  {% if post.sticky > 0 %}
-    {% set post_class = post_class + ' post-sticky' %}
-  {% endif %}
 
   {% if theme.reading_progress.enable && not is_index %}
     <div class="reading-progress-bar"></div>
