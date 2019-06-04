@@ -1,3 +1,5 @@
+$reward-padding=0.8rem
+
 .reward-container {
   position: relative;
   padding: 0;
@@ -13,14 +15,28 @@
   bottom: 2.5rem;
   margin: 0 auto;
   width: 20rem;
+  display: none;
+}
+
+.reward-box-card {
   border-radius: .5rem;
   box-shadow: 0 0 .3rem #111;
   background-color: #fff;
-  display: none;
+  padding: 1rem;
 }
 
 .reward-image {
   border-radius: .5rem;
+  display: block;
+}
+
+.reward-image-url {
+  border-radius: .5rem;
+  display: block;
+  margin: 0 2rem;
+  padding: 0.5rem 0;
+  background-color: $color-2;
+  border: 0;
 }
 
 .reward-group {
@@ -34,8 +50,8 @@
 
 .reward-button {
   position: relative;
-  margin: 0;
-  padding: 0 1rem;
+  margin: 0 0 0 -0.3rem;
+  padding: 0 $reward-padding;
   border: 0;
   height: 2rem;
   line-height: 2rem;
@@ -55,15 +71,17 @@
 }
 
 .reward-button:first-child {
-  padding-left: 1.3rem;
+  padding-left: $reward-padding + 0.2rem;
+  margin: 0;
   &:after {
     width:0;
   }
 }
 .reward-button:last-child {
-  padding-right: 1.3rem;
+  padding-right: $reward-padding + 0.2rem;
 }
 
 // #reward-button span:hover {
 //   background: #F7877F;
 // }
+$reward-padding=1.8rem
