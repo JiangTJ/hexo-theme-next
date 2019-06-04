@@ -765,17 +765,6 @@ canvas_lines: false
 # canvas_sphere
 canvas_sphere: false
 
-# Canvas-ribbon
-# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# size: The width of the ribbon.
-# alpha: The transparency of the ribbon.
-# zIndex: The display level of the ribbon.
-canvas_ribbon:
-  enable: false
-  size: 300
-  alpha: 0.6
-  zIndex: -1
-
 netlify_lm:
   enable: false
   max_width:
@@ -872,12 +861,6 @@ vendors:
   three_waves:
   canvas_lines:
   canvas_sphere:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/zproo/canvas-ribbon
-  # Example:
-  # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
-  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
 
   # Internal version: 3.3.0
   # See: https://github.com/ethantw/Han
