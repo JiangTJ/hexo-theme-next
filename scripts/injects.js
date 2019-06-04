@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const stylusInjectTypes = ['variable', 'mixin', 'style'];
+const stylusInjectTypes = ['variable', 'style'];
 class StylusInject {
   constructor() {
     this.files = [];
