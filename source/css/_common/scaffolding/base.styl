@@ -30,24 +30,6 @@ p {
   text-align: left;
 }
 
-for headline in (1..6) {
-  h{headline} {
-    font-size: $font-size-headings-base - $font-size-headings-step * headline;
-    code {
-      font-size: 1em;
-    }
-  }
-
-  +mobile() {
-    h{headline} {
-      font-size: $font-size-headings-base - $font-size-headings-step * headline - 4px;
-      code {
-        font-size: 1em;
-      }
-    }
-  }
-}
-
 a {
   word-wrap();
   // Remove the gray background color from active links in IE 10.

@@ -52,15 +52,6 @@ $body-bg-color                = $color-2
 $selection-bg                 = $blue-deep
 $selection-color              = white
 
-
-// Typography
-// Font, line-height, and elements colors.
-// --------------------------------------------------
-get_font_family(config) {
-  custom_family = hexo-config('font.' + config + '.family')
-  return custom_family is a 'string' ? custom_family : null
-}
-
 // Font families.
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster');
 $font-family-chinese      = 'PingFang SC', 'Microsoft YaHei'
@@ -70,7 +61,6 @@ $font-family-posts        = $font-family-base
 $font-family-monospace    = 'Inconsolata', consolas, $font-family-chinese, monospace
 $font-family-icons        = 'FontAwesome'
 
-
 // Font Weight
 $font-weight-lighter      = 200
 $font-weight-light        = 300
@@ -78,20 +68,9 @@ $font-weight-normal       = 400
 $font-weight-bold         = 600
 $font-weight-bolder       = 700
 
-
 // Font size
 $font-size-base = 14px
 $font-size-breadcrumb = $font-size-base - 2px
-
-
-// Headings font size
-$font-size-headings-step    = 2px
-$font-size-headings-base    = 24px
-$font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
-$font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
-$font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step
-$font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
-$font-size-headings-larger  = $font-size-headings-large + $font-size-headings-step
 
 // Global line height
 $line-height-base           = 2
@@ -379,3 +358,4 @@ $label-danger               = lighten(spin($note-danger-border, -10), 87% + lbg)
 
 
 @import "link.styl";
+@import "post.styl";
