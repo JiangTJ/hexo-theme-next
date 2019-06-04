@@ -42,7 +42,7 @@
       <div class="main-inner">
         <div class="content-wrap">
           <div class="sub-menu-wrap">
-            {{ partial( '_partials/header/sub-menu.swig') }}
+            {{ partial( '_partials/post/post-menu.swig') }}
           </div>
           <div id="content" class="content">
             {% block content %}{% endblock %}

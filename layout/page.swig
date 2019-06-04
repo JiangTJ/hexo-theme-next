@@ -80,7 +80,6 @@
       {### END PAGE BODY ###}
       {#####################}
     </div>
-    {{ partial( '_partials/page/breadcrumb.swig') }}
     {######################}
     {### END PAGE BLOCK ###}
     {######################}
