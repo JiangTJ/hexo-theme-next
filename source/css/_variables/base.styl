@@ -42,17 +42,11 @@ $color-1 = #ffffff
 // Global text color on <body>
 $text-color                   = $color-11
 
-// Global link color.
-$link-color                   = $color-11
-$link-hover-color             = $color-9
-$link-decoration-color        = $color-10
-$link-decoration-hover-color  = $color-10
-
 // Global border color.
 $border-color                 = $grey-light
 
 // Background color for <body>
-$body-bg-color                = white
+$body-bg-color                = $color-2
 
 // Selection
 $selection-bg                 = $blue-deep
@@ -382,3 +376,6 @@ $label-info                 = lighten(spin($note-info-border, -10), 86% + lbg)
 $label-success              = lighten(spin($note-success-border, 10), 85% + lbg)
 $label-warning              = lighten(spin($note-warning-border, 10), 83% + lbg)
 $label-danger               = lighten(spin($note-danger-border, -10), 87% + lbg)
+
+
+@import "link.styl";
