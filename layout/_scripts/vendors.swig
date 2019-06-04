@@ -20,36 +20,6 @@
   {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
 {% endif %}
 
-{% if theme.canvas_nest.enable %}
-  {% if theme.canvas_nest.onmobile %}
-    {% set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest.min.js') %}
-    {% if theme.vendors.canvas_nest %}
-      {% set canvas_nest_uri = theme.vendors.canvas_nest %}
-    {% endif %}
-  {% else %}
-    {% set canvas_nest_uri = url_for(theme.vendors._internal + '/canvas-nest/canvas-nest-nomobile.min.js') %}
-    {% if theme.vendors.canvas_nest_nomobile %}
-      {% set canvas_nest_uri = theme.vendors.canvas_nest_nomobile %}
-    {% endif %}
-  {% endif %}
-  <script color='{{ theme.canvas_nest.color }}' opacity='{{ theme.canvas_nest.opacity }}' zIndex='{{ theme.canvas_nest.zIndex }}' count='{{ theme.canvas_nest.count }}' src="{{ canvas_nest_uri }}"></script>
-{% endif %}
-
-{% if theme.three_waves %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.three_waves = 'three/three-waves.min.js' %}
-{% endif %}
-
-{% if theme.canvas_lines %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.canvas_lines = 'three/canvas_lines.min.js' %}
-{% endif %}
-
-{% if theme.canvas_sphere %}
-  {% set js_vendors.three = 'three/three.min.js' %}
-  {% set js_vendors.canvas_sphere = 'three/canvas_sphere.min.js' %}
-{% endif %}
-
 {% if theme.reading_progress.enable %}
   {% set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
 {% endif %}

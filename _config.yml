@@ -746,29 +746,6 @@ pace: true
 # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
 pace_theme: pace-theme-minimal
 
-# Canvas-nest
-# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest:
-  enable: false
-  onmobile: true # display on mobile or not
-  color: "0,0,255" # RGB values, use ',' to separate
-  opacity: 0.5 # the opacity of line: 0~1
-  zIndex: -1 # z-index property of the background
-  count: 99 # the number of lines
-
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-# three_waves
-three_waves: false
-# canvas_lines
-canvas_lines: false
-# canvas_sphere
-canvas_sphere: false
-
-netlify_lm:
-  enable: false
-  max_width:
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -841,26 +818,6 @@ vendors:
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js
   pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css
-
-  # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-canvas-nest
-  # Example:
-  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-  canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-
-  # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-three
-  # Example:
-  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
-  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
-  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
-  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
-  three:
-  three_waves:
-  canvas_lines:
-  canvas_sphere:
 
   # Internal version: 3.3.0
   # See: https://github.com/ethantw/Han
