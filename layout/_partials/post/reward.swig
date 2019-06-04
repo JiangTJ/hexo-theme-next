@@ -17,7 +17,7 @@
   {% endfor %} #}
   <div class="reward-group">
     {% for reward_name,reward_item in theme.reward %}
-      <a class="reward-button {{reward_name}}" onmouseover="rewardFunc.over('{{reward_name}}')" onclick="rewardFunc.persist('{{reward_name}}')">
+      <a class="reward-button {{reward_name}}" onmouseover="rewardFunc.over('{{reward_name}}')">
         <span>{% if reward_item.icon %}<i class="fa fa-{{reward_item.icon}}" aria-hidden="true"></i>{% else %}{{reward_item.name}}{% endif %}</span>
       </a>
     {% endfor %}
