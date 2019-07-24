@@ -654,6 +654,12 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 
+# try
+utteranc:
+  enable: false
+  repo:  jiangtj-lab/comments-test
+  pathname:  pathname
+  theme: github-light
 
 # ---------------------------------------------------------------
 # Content Sharing Services
